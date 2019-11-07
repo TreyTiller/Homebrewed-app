@@ -6,6 +6,7 @@ class TutButton extends React.Component {
         return(
             <div>
                 <button>Tutorial</button>
+                <hr></hr>
             </div>
         )
     }

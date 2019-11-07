@@ -11,6 +11,7 @@ class RegistrationForm extends React.Component {
                     <input placeholder="password" />
                     <button type="submit">Create Account</button>
                 </form>
+                <hr></hr>
             </div>
         )
     }
