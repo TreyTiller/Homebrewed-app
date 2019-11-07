@@ -1,13 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
     render() {
         return(
             <header>
                 <hr></hr>
-                <Link to="/dashboard" >Back</Link>
+                <button>back</button>
                 <h1>HomeBrewed</h1>
+                <button>Learn More</button>
             </header>
         )
     }

@@ -1,13 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+
 
 class Header extends React.Component {
     render() {
         return(
             <header>
                 <hr></hr>
-                <Link to="/dashboard" >Back</Link>
+                <button>Back</button>
                 <h1>HomeBrewed</h1>
+                <button>Add New Brew</button>
             </header>
         )
     }
