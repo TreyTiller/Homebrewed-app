@@ -1,0 +1,16 @@
+header {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  button {
+    width: 100px;
+    height: 25px;
+    background: transparent;
+  }
+
+  img {
+      width: 175px;
+      height: auto;
+      justify-self: center;
+  }
