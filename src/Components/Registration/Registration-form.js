@@ -10,7 +10,7 @@ class RegistrationForm extends React.Component {
                     <input placeholder="name" />
                     <input placeholder="username" />
                     <input placeholder="password" />
-                    <Link to="/dashboard">Create Account</Link>
+                    <Link to="/dashboard"><button>Create Account</button></Link>
                 </form>
                 <hr></hr>
             </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../Header'
 import Tracker from '../BeanTracker';
-import Cards from '../BrewCards';
+import Cards from '../BrewCards/BrewCards';
 
 class MainList extends React.Component {
     render() {

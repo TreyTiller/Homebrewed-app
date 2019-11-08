@@ -1,0 +1,17 @@
+
+
+.card {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+h3 {
+    text-align: center;
+}
+
+.meta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

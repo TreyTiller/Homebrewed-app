@@ -6,9 +6,9 @@ class Header extends React.Component {
     render() {
         return(
             <header>
-                <Link to="/login">Log Out</Link>
+                <Link to="/login"><button>Log Out</button></Link>
                 <img src={Logo} alt="logo" />
-                <Link to="/add-brew">Add New Brew</Link>
+                <Link to="/add-brew"><button>Add New Brew</button></Link>
             </header>
         )
     }
