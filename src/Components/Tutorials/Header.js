@@ -4,11 +4,10 @@ import { Link } from 'react-router-dom';
 class Header extends React.Component {
     render() {
         return(
-            <header>
-                <Link to="/login">Back</Link>
+            <Header>
                 <h1>HomeBrewed</h1>
-                <Link to="/dashboard">Demo</Link>
-            </header>
+                <Link to="/login">Skip</Link>
+            </Header>
         )
     }
 }

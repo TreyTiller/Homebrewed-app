@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class RegistrationForm extends React.Component {
     render() {
@@ -9,7 +10,7 @@ class RegistrationForm extends React.Component {
                     <input placeholder="name" />
                     <input placeholder="username" />
                     <input placeholder="password" />
-                    <button type="submit">Create Account</button>
+                    <Link to="/dashboard">Create Account</Link>
                 </form>
                 <hr></hr>
             </div>
