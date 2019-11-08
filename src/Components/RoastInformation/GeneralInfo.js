@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class GeneralInfo extends React.Component {
     render() {
@@ -14,7 +15,7 @@ class GeneralInfo extends React.Component {
                     <li>Chocolate</li>
                     <li>Lemongrass</li>
                 </ul>
-                <button>It's All Gone</button>
+                <Link to="/roast-form"><button>It's All Gone</button></Link>
             </div>
         )
     }

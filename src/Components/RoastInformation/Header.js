@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Logo from '../../../src/HomeBrewed-logo.png';
 
 
 
@@ -7,9 +9,9 @@ class Header extends React.Component {
         return(
             <header>
                 <hr></hr>
-                <button>Back</button>
-                <h1>HomeBrewed</h1>
-                <button>Add New Brew</button>
+                <Link to="/dashboard"><button>Back</button></Link>
+                <img src={Logo} alt="logo" />
+                <Link to="/roast-form"><button>Add Beans</button></Link>
             </header>
         )
     }

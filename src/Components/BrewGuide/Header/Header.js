@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '../../../../src/HomeBrewed-logo.png';
+import './Header.css'
 
 class Header extends React.Component {
     render() {
         return(
             <header>
-                <hr></hr>
-                <Link to="/dashboard" >Back</Link>
-                <h1>HomeBrewed</h1>
+                <Link to="/dashboard" ><button>Back</button></Link>
+                <img src={ Logo } alt="logo" />
             </header>
         )
     }
