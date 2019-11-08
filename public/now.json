@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "alias": "TreyTiller-HomeBrewed",
+    "name": "HomeBrewed",
+    "routes": [
+        {
+            "src": "^/static/(.*)",
+            "dest": "/static/$1"
+        },
+        {
+            "src": "^/static/(.*)",
+            "dest": "/index.html"
+        }
+    ]
+}
