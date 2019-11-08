@@ -1,11 +1,13 @@
 import React from 'react';
+import Logo from '../../../../src/HomeBrewed-logo.png';
+import './Header.css';
 
 
 class Header extends React.Component {
     render() {
         return(
             <header>
-                <h1>HomeBrewed</h1>
+                <img src={ Logo } alt="logo" />
             </header>
         )
     }

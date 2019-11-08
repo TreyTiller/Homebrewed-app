@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../Header';
+import Header from '../Header/Header';
 import Cards from '../Cards';
 
 class Tutorials extends React.Component {
