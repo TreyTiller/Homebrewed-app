@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 class Header extends React.Component {
     render() {
         return(
-            <Header>
+            <header>
                 <h1>HomeBrewed</h1>
                 <Link to="/login">Skip</Link>
-            </Header>
+            </header>
         )
     }
 }
