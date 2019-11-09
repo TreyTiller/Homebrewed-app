@@ -15,51 +15,56 @@ class NewBrewForm extends React.Component {
 
     handleAddItem = (itemName) => {
         const newItems = [
-          ...this.state.supplies,
-          { name: itemName }
+            ...this.state.supplies,
+            { name: itemName }
         ]
         this.setState({
-          supplies: newItems
+            supplies: newItems
         })
-      }
+    }
 
-      handleDeleteItem = (item) => {
+    handleDeleteItem = (item) => {
         const newItems = this.state.supplies.filter(itm => itm !== item)
         this.setState({
-          supplies: newItems
+            supplies: newItems
         })
-      }
+    }
 
-      handleDeleteDirection = (item) => {
+    handleDeleteDirection = (item) => {
         const newItems = this.state.directions.filter(itm => itm !== item)
         this.setState({
-          directions: newItems
+            directions: newItems
         })
-      }
+    }
 
-      handleAddDirection = (directionName) => {
+    handleAddDirection = (directionName) => {
         const newDirections = [
-          ...this.state.directions,
-          { name: directionName }
+            ...this.state.directions,
+            { name: directionName }
         ]
         this.setState({
-          directions: newDirections
+            directions: newDirections
         })
-      }
+    }
 
 
     render() {
         return (
-            <div className="new-brew-renderer">
-                <AddSupplies onAddItem={this.handleAddItem} />
-                <SupplyList 
-                    items={this.state.supplies}
-                    onDeleteItem={this.handleDeleteItem} />
-                <AddDirections onAddDirection={this.handleAddDirection} />
-                <DirectionList
-                    items={this.state.directions}
-                    onDeleteItem={this.handleDeleteDirection} />
-            </div>
+            <form>
+                <input placeholder="title" />
+
+                <div className="new-brew-renderer">
+                    <AddSupplies onAddItem={this.handleAddItem} />
+                    <SupplyList
+                        items={this.state.supplies}
+                        onDeleteItem={this.handleDeleteItem} />
+                    <AddDirections onAddDirection={this.handleAddDirection} />
+                    <DirectionList
+                        items={this.state.directions}
+                        onDeleteItem={this.handleDeleteDirection} />
+                </div>
+                <button type="submit">Let's Brew!</button>
+            </form>
         )
     }
 }
