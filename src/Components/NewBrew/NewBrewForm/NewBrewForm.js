@@ -1,7 +1,8 @@
 import React from 'react';
 import AddSupplies from './Supply/AddSupplies';
 import SupplyList from './Supply/SupplyList';
-import DirectionList from './Direction/DirectionList';
+import AddDirections from './Direction/AddDirections';
+import DirectionList from '../NewBrewForm/Direction/DirectionList';
 
 class NewBrewForm extends React.Component {
     constructor(props) {
@@ -29,13 +30,20 @@ class NewBrewForm extends React.Component {
         })
       }
 
+      handleDeleteDirection = (item) => {
+        const newItems = this.state.directions.filter(itm => itm !== item)
+        this.setState({
+          directions: newItems
+        })
+      }
+
       handleAddDirection = (directionName) => {
         const newDirections = [
           ...this.state.directions,
           { name: directionName }
         ]
         this.setState({
-          direction: newDirections
+          directions: newDirections
         })
       }
 
@@ -47,7 +55,10 @@ class NewBrewForm extends React.Component {
                 <SupplyList 
                     items={this.state.supplies}
                     onDeleteItem={this.handleDeleteItem} />
-                <DirectionList onAddDirection={this.handleAddDirection} />
+                <AddDirections onAddDirection={this.handleAddDirection} />
+                <DirectionList
+                    items={this.state.directions}
+                    onDeleteItem={this.handleDeleteDirection} />
             </div>
         )
     }

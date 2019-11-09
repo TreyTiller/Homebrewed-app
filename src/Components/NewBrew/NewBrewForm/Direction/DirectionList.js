@@ -1,13 +1,20 @@
 import React from 'react';
+import DirectionItem from './DirectionItem';
 
-class DirectionList extends React.Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
+export default function DirectionList(props) {
+  return (
+    <ul>
+      {props.items.map((item, i) =>
+        <DirectionItem
+          key={i}
+          item={item}
+          onDeleteItem={props.onDeleteItem}
+        />
+      )}
+    </ul>
+  )
 }
 
-export default DirectionList;
+DirectionList.defaultProps = {
+  items: []
+}
