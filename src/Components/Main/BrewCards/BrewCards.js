@@ -15,7 +15,22 @@ class Cards extends React.Component {
             "Title": "French Press",
             "Skill": "Easy",
             "Time": "4:00"
-        }
+        },
+        {
+            "Title": "Pour Over",
+            "Skill": "Hard",
+            "Time": "5:00"
+        },
+        {
+            "Title": "Chemex",
+            "Skill": "Medium",
+            "Time": "5:00"
+        },
+        {
+            "Title": "Cold Brew",
+            "Skill": "Easy",
+            "Time": "12:00:00"
+        },
     ]
 
     render() {
