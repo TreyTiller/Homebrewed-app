@@ -54,10 +54,12 @@ class NewBrewForm extends React.Component {
                 <input placeholder="title" />
 
                 <div className="new-brew-renderer">
+                    <label>Supplies:</label>
                     <AddSupplies onAddItem={this.handleAddItem} />
                     <SupplyList
                         items={this.state.supplies}
                         onDeleteItem={this.handleDeleteItem} />
+                    <label>Directions:</label>
                     <AddDirections onAddDirection={this.handleAddDirection} />
                     <DirectionList
                         items={this.state.directions}
