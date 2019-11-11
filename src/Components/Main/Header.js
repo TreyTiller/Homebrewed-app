@@ -7,7 +7,7 @@ class Header extends React.Component {
         return(
             <header>
                 <Link to="/login"><button>Log Out</button></Link>
-                <img src={Logo} alt="logo" />
+                <Link to="/dashboard" ><img src={Logo} alt="logo" /></Link>
                 <Link to="/add-brew"><button>Add New Brew</button></Link>
             </header>
         )
