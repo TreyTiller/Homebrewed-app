@@ -5,8 +5,6 @@ import Register from './Components/Registration/Renderer/Register';
 import MainList from './Components/Main/Renderer/MainList';
 import BrewGuide from './Components/BrewGuide/Renderer/BrewGuide';
 import NewBrew from './Components/NewBrew/Renderer/NewBrew';
-import RoastInfo from './Components/RoastInformation/Renderer/RoastInfo';
-import RoastExpiration from './Components/RoastExpirationForm/Renderer/RoastExpirationForm';
 import Tutorials from './Components/Tutorials/Renderer/Tutorials';
 
 function App() {
@@ -17,8 +15,6 @@ function App() {
       <Route path="/dashboard" component={ MainList } />
       <Route path="/brew-guide" component={ BrewGuide } />
       <Route path="/add-brew" component={ NewBrew }/>
-      <Route path="/roast-info" component={ RoastInfo }/>
-      <Route path="/roast-form" component={ RoastExpiration } />
       <Route exact path="/" component={ Tutorials } />
     </div>
   );

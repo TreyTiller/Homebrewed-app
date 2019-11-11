@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from '../Header'
-import Tracker from '../BeanTracker';
 import Cards from '../BrewCards/BrewCards';
 
 class MainList extends React.Component {
@@ -8,7 +7,6 @@ class MainList extends React.Component {
         return (
             <div className="main">
                 <Header />
-                <Tracker />
                 <Cards />
             </div>
         )
