@@ -6,7 +6,7 @@ class Cards extends React.Component {
             <div>
                 <p>
                 Please fill out the google form while testing: 
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc42zQbdfa-10fkjrrGQ6mZSj4CVulgStYCtgD7QnQGSyWR5A/viewform?usp=sf_link" target="_blank"> Dev Testing Google Form</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc42zQbdfa-10fkjrrGQ6mZSj4CVulgStYCtgD7QnQGSyWR5A/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer"> Dev Testing Google Form</a>
                 <ul>Features:
                     <li>Roast freshness tracking</li>
                     <li>Default brew guides</li>
