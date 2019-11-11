@@ -41,8 +41,8 @@ class Cards extends React.Component {
                         <div className="card">
                             <h3>{card.Title}</h3>
                             <div className="meta">
-                                <p>{card.Skill}</p>
-                                <p>{card.Time}</p>
+                                <p>Skill Level: {card.Skill}</p>
+                                <p>Brew Time: {card.Time}</p>
                             </div>
                         </div>
                     </Link>
