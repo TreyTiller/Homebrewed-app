@@ -12,7 +12,7 @@ class AddSupplies extends React.Component {
                 <input
                     name='itemToAdd'
                     type='text'
-                    placeholder='#2 Paper Filters'
+                    placeholder='24 Grams Coffee'
                     aria-label='Supplies List Item'
                 />
                 <button type='submit'>Add Item</button>

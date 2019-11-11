@@ -12,7 +12,7 @@ class AddDirections extends React.Component {
                 <input
                     name='itemToAdd'
                     type='text'
-                    placeholder='This is a direction'
+                    placeholder='Heat water to 205 Degrees'
                     aria-label='Directions List Item'
                 />
                 <button type='submit'>Add Direction</button>

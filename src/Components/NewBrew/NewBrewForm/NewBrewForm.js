@@ -51,7 +51,15 @@ class NewBrewForm extends React.Component {
     render() {
         return (
             <form>
-                <input placeholder="title" />
+                <label>Add a title for your brew method:</label>
+                <input placeholder="French Press" />
+                <label>What is the difficulty of this method:</label>
+                <input type="radio" name="easy" value="Easy" checked /> Easy<br></br>
+                <input type="radio" name="medium" value="Medium" /> Medium<br></br>
+                <input type="radio" name="hard" value="Hard" /> Hard<br></br>
+                <label>How long will this take to make:</label>
+                <input type="text" placeholder="4:00" />
+
 
                 <div className="new-brew-renderer">
                     <label>Supplies:</label>
