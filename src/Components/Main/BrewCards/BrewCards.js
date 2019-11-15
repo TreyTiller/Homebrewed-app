@@ -4,50 +4,37 @@ import { Link } from 'react-router-dom';
 
 
 class Cards extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            "listData": []
+        }
+    }
 
-    listData = [
-        {
-            "Title": "Clever",
-            "Skill": "Easy",
-            "Time": "4:00"
-        },
-        {
-            "Title": "French Press",
-            "Skill": "Easy",
-            "Time": "4:00"
-        },
-        {
-            "Title": "Pour Over",
-            "Skill": "Hard",
-            "Time": "5:00"
-        },
-        {
-            "Title": "Chemex",
-            "Skill": "Medium",
-            "Time": "5:00"
-        },
-        {
-            "Title": "Cold Brew",
-            "Skill": "Easy",
-            "Time": "12:00:00"
-        },
-    ]
+    componentDidMount() {
+        fetch("http://localhost:8000/api/recipes")
+            .then(res => res.json())
+            .then(recipes => {
+                this.setState({
+                    listData: recipes
+                })
+            })
+    }
 
     render() {
         return (
             <div>
-                {this.listData.map(card =>
+                {this.state.listData.map(card =>
                     <Link to="/brew-guide">
                         <div className="card">
-                            <h3>{card.Title}</h3>
+                            <h3>{card.title}</h3>
                             <div className="meta">
-                                <p>Skill Level: {card.Skill}</p>
-                                <p>Brew Time: {card.Time}</p>
+                                <p>Skill Level: {card.skill}</p>
+                                <p>Brew Time: {card.time}</p>
                             </div>
                         </div>
                     </Link>
                 )}
-
             </div>
         )
     }
