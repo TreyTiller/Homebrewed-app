@@ -7,46 +7,19 @@ class Cards extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            "listData": [
-                {
-                    "title": "Clever",
-                    "skill": "Medium",
-                    "time": "5:00"
-                },
-                {
-                    "title": "French Press",
-                    "skill": "Easy",
-                    "time": "4:00"
-                },
-                {
-                    "title": "Chemex",
-                    "skill": "Medium",
-                    "time": "5:00"
-                },
-                {
-                    "title": "Pour Over",
-                    "skill": "Hard",
-                    "time": "6:00"
-                },
-                {
-                    "title": "Cold Brew",
-                    "skill": "Easy",
-                    "time": "12:00:00"
-                },
-
-            ]
+            "listData": []
         }
     }
 
-    // componentDidMount() {
-    //     fetch("http://localhost:8000/api/recipes")
-    //         .then(res => res.json())
-    //         .then(recipes => {
-    //             this.setState({
-    //                 listData: recipes
-    //             })
-    //         })
-    // }
+    componentDidMount() {
+        fetch("http://localhost:8000/api/recipes")
+            .then(res => res.json())
+            .then(recipes => {
+                this.setState({
+                    listData: recipes
+                })
+            })
+    }
 
     render() {
         return (
