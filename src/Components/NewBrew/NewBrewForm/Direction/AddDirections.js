@@ -4,7 +4,7 @@ class AddDirections extends React.Component {
     onSubmitForm = (e) => {
         e.preventDefault()
         this.props.onAddDirection(e.target.itemToAdd.value)
-      }
+    }
 
     render() {
         return (

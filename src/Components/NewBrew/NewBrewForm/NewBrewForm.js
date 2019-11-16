@@ -47,18 +47,43 @@ class NewBrewForm extends React.Component {
         })
     }
 
+    onSubmitForm = (e) => {
+        e.preventDefault()
+
+        fetch('http://localhost:8000/api/recipes', {
+            method: "POST",
+            body: JSON.stringify({
+                title: e.target.title.value,
+                skill: e.target.skill.value,
+                time: e.target.time.value
+            })
+        })
+        
+        // fetch('http://localhost:8000/api/directions', {
+        //     method: "POST",
+        //     body: JSON.stringify({
+        //         title: e.target.itemToAdd.value,
+        //         recipe_id: this.props.recipe_id
+        //     })
+        //})
+        .then(res => res.json())
+        .then(data => {
+            this.state.onAddDirection(e.target.itemToAdd.value)
+        })
+      }
+
 
     render() {
         return (
-            <form>
+            <form onSubmit={this.onSubmitForm}>
                 <label>Add a title for your brew method:</label>
-                <input placeholder="French Press" />
+                <input placeholder="French Press" name="title"/>
                 <label>What is the difficulty of this method:</label>
-                <input type="radio" name="easy" value="Easy" checked /> Easy<br></br>
-                <input type="radio" name="medium" value="Medium" /> Medium<br></br>
-                <input type="radio" name="hard" value="Hard" /> Hard<br></br>
+                <input type="radio" name="skill" value="Easy" checked /> Easy<br></br>
+                <input type="radio" name="skill" value="Medium" /> Medium<br></br>
+                <input type="radio" name="skill" value="Hard" /> Hard<br></br>
                 <label>How long will this take to make:</label>
-                <input type="text" placeholder="4:00" />
+                <input type="text" placeholder="4:00" name="time" />
 
 
                 <div className="new-brew-renderer">
@@ -68,7 +93,7 @@ class NewBrewForm extends React.Component {
                         items={this.state.supplies}
                         onDeleteItem={this.handleDeleteItem} />
                     <label>Directions:</label>
-                    <AddDirections onAddDirection={this.handleAddDirection} />
+                    <AddDirections recipe_id={this.recipe_id} onAddDirection={this.handleAddDirection} />
                     <DirectionList
                         items={this.state.directions}
                         onDeleteItem={this.handleDeleteDirection} />
