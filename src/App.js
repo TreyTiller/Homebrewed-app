@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import LoginPage from './Routes/LoginPage/LoginPage';
-import Register from './Components/Registration/Renderer/Register';
+import RegistrationPage from './Routes/RegistrationPage/RegistrationPage';
 import MainList from './Components/Main/Renderer/MainList';
 import BrewGuide from './Components/BrewGuide/Renderer/BrewGuide';
 import NewBrew from './Components/NewBrew/Renderer/NewBrew';
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Route path="/login" component={ LoginPage } />
-      <Route path="/register" component={ Register } />
+      <Route path="/register" component={ RegistrationPage } />
       <Route path="/dashboard" component={ MainList } />
       <Route path="/brew-guide" component={ BrewGuide } />
       <Route path="/add-brew" component={ NewBrew }/>
