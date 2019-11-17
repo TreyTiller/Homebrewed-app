@@ -1,9 +1,13 @@
-
+.dashboard {
+    background: #17223b;
+}
 
 .card {
-    border: 1px solid black;
+    border: 1px solid #6b778d;
     border-radius: 5px;
-    margin: 5px;
+    background-color: #223250;
+    color: white;
+    text-decoration: none;
 }
 
 h3 {

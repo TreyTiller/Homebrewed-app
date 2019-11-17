@@ -52,12 +52,21 @@ class NewBrewForm extends React.Component {
 
         fetch('http://localhost:8000/api/recipes', {
             method: "POST",
+            headers: {
+                'content-type': 'application/json',
+              },
             body: JSON.stringify({
                 title: e.target.title.value,
-                skill: e.target.skill.value,
-                time: e.target.time.value
-            })
+                //skill: e.target.skill.value,
+                //time: e.target.time.value
+            }),
         })
+        .then(res =>
+            (!res.ok)
+              ? res.json().then(e => Promise.reject(e))
+              : res.json()
+          )
+    }
         
         // fetch('http://localhost:8000/api/directions', {
         //     method: "POST",
@@ -66,11 +75,11 @@ class NewBrewForm extends React.Component {
         //         recipe_id: this.props.recipe_id
         //     })
         //})
-        .then(res => res.json())
-        .then(data => {
-            this.state.onAddDirection(e.target.itemToAdd.value)
-        })
-      }
+    //     .then(res => res.json())
+    //     .then(recipe => {
+    //         this.state.onAddDirection(e.target.itemToAdd.value)
+    //     })
+    //   }
 
 
     render() {
@@ -79,7 +88,7 @@ class NewBrewForm extends React.Component {
                 <label>Add a title for your brew method:</label>
                 <input placeholder="French Press" name="title"/>
                 <label>What is the difficulty of this method:</label>
-                <input type="radio" name="skill" value="Easy" checked /> Easy<br></br>
+                <input type="radio" name="skill" value="Easy" defaultChecked /> Easy<br></br>
                 <input type="radio" name="skill" value="Medium" /> Medium<br></br>
                 <input type="radio" name="skill" value="Hard" /> Hard<br></br>
                 <label>How long will this take to make:</label>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../Header'
+import Header from '../../Header/Header'
 import Cards from '../BrewCards/BrewCards';
 
 class MainList extends React.Component {

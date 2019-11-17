@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import LoginForm from '../../Components/Login/Login-Form/Login-Form'
 import { Section } from '../../Components/Utils/Utils'
-import Header from '../../Components/Login/Header/Header'
+import Header from '../../Components/Header/Header'
 
 export default class LoginPage extends Component {
   static defaultProps = {

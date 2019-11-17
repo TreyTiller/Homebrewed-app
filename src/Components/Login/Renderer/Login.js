@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../Header/Header';
+import Header from '../../Header/Header';
 import LoginForm from '../Login-Form/Login-Form';
 import TutButton from '../Tut-Button/Tut-Button';
 

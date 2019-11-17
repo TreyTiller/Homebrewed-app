@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../Header/Header';
+import Header from '../../Header/Header';
 import Guide from '../Guide';
 import Stopwatch from '../Stopwatch';
 

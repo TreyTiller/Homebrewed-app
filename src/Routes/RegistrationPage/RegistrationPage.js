@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Section } from '../../Components/Utils/Utils'
 import RegistrationForm from '../../Components/Registration/Registration-form'
-import Header from '../../Components/Registration/Header'
+import Header from '../../Components/Header/Header'
 
 export default class RegistrationPage extends Component {
   static defaultProps = {

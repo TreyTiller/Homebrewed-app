@@ -23,9 +23,9 @@ class Cards extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="dashboard">
                 {this.state.listData.map(card =>
-                    <Link to="/brew-guide">
+                    <Link to="/brew-guide" style={{ textDecoration: 'none' }}>
                         <div className="card">
                             <h3>{card.title}</h3>
                             <div className="meta">
