@@ -1,6 +1,7 @@
 import React from "react";
 
 
+
 class AddBrewForm extends React.Component {
     constructor() {
         super();
@@ -46,9 +47,20 @@ class AddBrewForm extends React.Component {
     }
 
     handleSubmit = evt => {
-        const { title } = this.state;
-        alert(`Created ${title} brew guide! Let's make some coffee!`);
-    };
+        const { title, skill, time, directions, supplies } = this.state;
+        const data = new FormData(evt.target);
+        alert(` ${title}, ${skill}, ${time}, ${supplies}, ${directions} `);
+        // fetch('http://localhost:8000/api/recipes', {
+        //     method: 'POST',
+        //     body: data,
+        // })
+        // .then(res =>
+        //     (!res.ok)
+        //       ? res.json().then(e => Promise.reject(e))
+        //       : res.json()
+        //   )
+    }
+
 
     handleAddSupplies = () => {
         this.setState({
@@ -74,11 +86,26 @@ class AddBrewForm extends React.Component {
         });
     };
 
+    componentDidMount() {
+        fetch('http://localhost:8000/api/recipes', {
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: {
+                "title": this.state.title,
+            }
+        })
+            .then(res =>
+                (!res.ok)
+            )
+    }
+
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
                 <label>Add a title for your brew method:</label>
-                <input placeholder="French Press" name="title" value={this.state.title} onChange={this.handleTitleChange} />
+                <input placeholder="French Press" name="title" value={this.state.title} onChange={this.handleTitleChange} required />
                 <label>What is the difficulty of this method:</label>
                 <select value={this.state.skill} onChange={this.updateState}>
                     <option value="hard">Hard</option>
