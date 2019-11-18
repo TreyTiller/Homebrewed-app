@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../../Header/Header';
+import HeaderLocked from '../../Header/Header-Locked';
 import RegistrationForm from '../Registration-form';
 
 
@@ -8,7 +8,7 @@ import RegistrationForm from '../Registration-form';
 function Register() {
   return (
     <div className="register-renderer">
-        <Header />
+        <HeaderLocked />
         <RegistrationForm />
     </div>
   );

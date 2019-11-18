@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Input, Required } from '../Utils/Utils'
 import AuthApiService from '../../services/auth-api-service'
+import { Link } from 'react-router-dom'
 
 export default class RegistrationForm extends Component {
   static defaultProps = {
@@ -33,6 +34,7 @@ export default class RegistrationForm extends Component {
   render() {
     const { error } = this.state
     return (
+      <div>
       <form
         className='RegistrationForm'
         onSubmit={this.handleSubmit}
@@ -77,6 +79,9 @@ export default class RegistrationForm extends Component {
           Register
         </Button>
       </form>
+
+      <Link to="/login">Already have an account?<button>Log in</button></Link>
+      </div>
     )
   }
 }

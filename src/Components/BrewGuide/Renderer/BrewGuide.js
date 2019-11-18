@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../../Header/Header';
 import Guide from '../Guide';
 import Stopwatch from '../Stopwatch';
+import HeaderBack from '../../Header/Header-Back';
 
 class BrewGuide extends React.Component {
     render() {
         return(
             <div>
-                <Header />
+                <HeaderBack />
                 <Guide />
                 <Stopwatch />
             </div>

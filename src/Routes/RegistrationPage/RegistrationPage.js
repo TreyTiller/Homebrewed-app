@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Section } from '../../Components/Utils/Utils'
 import RegistrationForm from '../../Components/Registration/Registration-form'
-import Header from '../../Components/Header/Header'
+import HeaderLocked from '../../Components/Header/Header-Locked'
 
 export default class RegistrationPage extends Component {
   static defaultProps = {
@@ -18,7 +18,7 @@ export default class RegistrationPage extends Component {
   render() {
     return (
       <Section className='RegistrationPage'>
-        <Header />
+        <HeaderLocked />
         <h2>Register</h2>
         <RegistrationForm
           onRegistrationSuccess={this.handleRegistrationSuccess}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import LoginForm from '../../Components/Login/Login-Form/Login-Form'
 import { Section } from '../../Components/Utils/Utils'
-import Header from '../../Components/Header/Header'
+import HeaderLocked from '../../Components/Header/Header-Locked'
 
 export default class LoginPage extends Component {
   static defaultProps = {
@@ -20,7 +20,7 @@ export default class LoginPage extends Component {
   render() {
     return (
       <Section className='LoginPage'>
-        <Header />
+        <HeaderLocked />
         <h2>Login</h2>
         <LoginForm
           onLoginSuccess={this.handleLoginSuccess}

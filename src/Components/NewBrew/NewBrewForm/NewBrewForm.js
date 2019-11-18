@@ -78,15 +78,15 @@ class AddBrewForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <label>Add a title for your brew method:</label>
-                <input placeholder="French Press" name="title" value={this.state.title} onChange={this.handleTitleChange}/>
+                <input placeholder="French Press" name="title" value={this.state.title} onChange={this.handleTitleChange} />
                 <label>What is the difficulty of this method:</label>
                 <select value={this.state.skill} onChange={this.updateState}>
-  <option value="hard">Hard</option>
-  <option value="medium">Medium</option>
-  <option value="easy">Easy</option>
-</select>
+                    <option value="hard">Hard</option>
+                    <option value="medium">Medium</option>
+                    <option value="easy">Easy</option>
+                </select>
                 <label>How long will this take to make:</label>
-                <input type="text" placeholder="4:00" name="time" value={this.state.time} onChange={this.handleTimeChange}/>
+                <input type="text" placeholder="4:00" name="time" value={this.state.time} onChange={this.handleTimeChange} />
 
                 <h4>Supplies</h4>
 

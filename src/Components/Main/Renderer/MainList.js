@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../../Header/Header'
+import HeaderDash from '../../Header/Header-Dashboard'
 import Cards from '../BrewCards/BrewCards';
 
 class MainList extends React.Component {
     render() {
         return (
             <div className="main">
-                <Header />
+                <HeaderDash />
                 <Cards />
             </div>
         )

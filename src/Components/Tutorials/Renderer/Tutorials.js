@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../Header/Header';
+import HeaderSkip from '../../Header/Header-Skip';
 import Cards from '../Cards';
 
 class Tutorials extends React.Component {
     render() {
         return(
             <div className="renderer">
-                <Header />
+                <HeaderSkip />
                 <Cards />
             </div>
         )

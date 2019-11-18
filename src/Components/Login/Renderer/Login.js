@@ -1,13 +1,14 @@
 import React from 'react';
-import Header from '../../Header/Header';
+import HeaderLocked from '../../Header/Header-Locked';
 import LoginForm from '../Login-Form/Login-Form';
 import TutButton from '../Tut-Button/Tut-Button';
+import HeaderLocked from '../../Header/Header-Locked';
 
 
 function Login() {
   return (
     <div className="login-renderer">
-      <Header />
+      <HeaderLocked />
       <LoginForm />
       <TutButton />
     </div>

@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../../Header/Header';
+import HeaderBack from '../../Header/Header-Back';
 import NewBrewFrom from '../NewBrewForm/NewBrewForm';
 
 class NewBrew extends React.Component {
     render() {
         return (
             <div>
-                <Header />
+                <HeaderBack />
                 <NewBrewFrom />
             </div>
         )
