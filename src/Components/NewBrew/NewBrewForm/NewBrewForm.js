@@ -1,116 +1,150 @@
-import React from 'react';
-import AddSupplies from './Supply/AddSupplies';
-import SupplyList from './Supply/SupplyList';
-import AddDirections from './Direction/AddDirections';
-import DirectionList from '../NewBrewForm/Direction/DirectionList';
+import React from "react";
 
-class NewBrewForm extends React.Component {
-    constructor(props) {
-        super(props);
+
+class AddBrewForm extends React.Component {
+    constructor() {
+        super();
         this.state = {
-            supplies: [],
-            directions: []
-        }
+            title: "",
+            time: "",
+            skill: "",
+            supplies: [{ title: "" }],
+            directions: [{ title: "" }]
+        };
     }
 
-    handleAddItem = (itemName) => {
-        const newItems = [
-            ...this.state.supplies,
-            { name: itemName }
-        ]
+    handleTitleChange = evt => {
+        this.setState({ title: evt.target.value });
+    };
+
+    handleTimeChange = evt => {
+        this.setState({ time: evt.target.value });
+    };
+
+    handleSuppliesChange = idx => evt => {
+        const newSupplies = this.state.supplies.map((supplies, sidx) => {
+            if (idx !== sidx) return supplies;
+            return { ...supplies, title: evt.target.value };
+        });
+
+        this.setState({ supplies: newSupplies });
+    };
+
+    handleDirectionsChange = idx => evt => {
+        const newDirections = this.state.directions.map((directions, sidx) => {
+            if (idx !== sidx) return directions;
+            return { ...directions, title: evt.target.value };
+        });
+
+        this.setState({ directions: newDirections });
+    };
+
+    updateState = (newSkill) => {
         this.setState({
-            supplies: newItems
+            skill: newSkill.value
         })
     }
 
-    handleDeleteItem = (item) => {
-        const newItems = this.state.supplies.filter(itm => itm !== item)
+    handleSubmit = evt => {
+        const { title } = this.state;
+        alert(`Created ${title} brew guide! Let's make some coffee!`);
+    };
+
+    handleAddSupplies = () => {
         this.setState({
-            supplies: newItems
-        })
-    }
+            supplies: this.state.supplies.concat([{ title: "" }])
+        });
+    };
 
-    handleDeleteDirection = (item) => {
-        const newItems = this.state.directions.filter(itm => itm !== item)
+    handleAddDirections = () => {
         this.setState({
-            directions: newItems
-        })
-    }
+            directions: this.state.directions.concat([{ title: "" }])
+        });
+    };
 
-    handleAddDirection = (directionName) => {
-        const newDirections = [
-            ...this.state.directions,
-            { name: directionName }
-        ]
+    handleRemoveSupplies = idx => () => {
         this.setState({
-            directions: newDirections
-        })
-    }
+            supplies: this.state.supplies.filter((s, sidx) => idx !== sidx)
+        });
+    };
 
-    onSubmitForm = (e) => {
-        e.preventDefault()
-
-        fetch('http://localhost:8000/api/recipes', {
-            method: "POST",
-            headers: {
-                'content-type': 'application/json',
-              },
-            body: JSON.stringify({
-                title: e.target.title.value,
-                //skill: e.target.skill.value,
-                //time: e.target.time.value
-            }),
-        })
-        .then(res =>
-            (!res.ok)
-              ? res.json().then(e => Promise.reject(e))
-              : res.json()
-          )
-    }
-        
-        // fetch('http://localhost:8000/api/directions', {
-        //     method: "POST",
-        //     body: JSON.stringify({
-        //         title: e.target.itemToAdd.value,
-        //         recipe_id: this.props.recipe_id
-        //     })
-        //})
-    //     .then(res => res.json())
-    //     .then(recipe => {
-    //         this.state.onAddDirection(e.target.itemToAdd.value)
-    //     })
-    //   }
-
+    handleRemoveDirections = idx => () => {
+        this.setState({
+            directions: this.state.directions.filter((s, sidx) => idx !== sidx)
+        });
+    };
 
     render() {
         return (
-            <form onSubmit={this.onSubmitForm}>
+            <form onSubmit={this.handleSubmit}>
                 <label>Add a title for your brew method:</label>
-                <input placeholder="French Press" name="title"/>
+                <input placeholder="French Press" name="title" value={this.state.title} onChange={this.handleTitleChange}/>
                 <label>What is the difficulty of this method:</label>
-                <input type="radio" name="skill" value="Easy" defaultChecked /> Easy<br></br>
-                <input type="radio" name="skill" value="Medium" /> Medium<br></br>
-                <input type="radio" name="skill" value="Hard" /> Hard<br></br>
+                <select value={this.state.skill} onChange={this.updateState}>
+  <option value="hard">Hard</option>
+  <option value="medium">Medium</option>
+  <option value="easy">Easy</option>
+</select>
                 <label>How long will this take to make:</label>
-                <input type="text" placeholder="4:00" name="time" />
+                <input type="text" placeholder="4:00" name="time" value={this.state.time} onChange={this.handleTimeChange}/>
 
+                <h4>Supplies</h4>
 
-                <div className="new-brew-renderer">
-                    <label>Supplies:</label>
-                    <AddSupplies onAddItem={this.handleAddItem} />
-                    <SupplyList
-                        items={this.state.supplies}
-                        onDeleteItem={this.handleDeleteItem} />
-                    <label>Directions:</label>
-                    <AddDirections recipe_id={this.recipe_id} onAddDirection={this.handleAddDirection} />
-                    <DirectionList
-                        items={this.state.directions}
-                        onDeleteItem={this.handleDeleteDirection} />
-                </div>
-                <button type="submit">Let's Brew!</button>
+                {this.state.supplies.map((supplies, idx) => (
+                    <div className="supplies">
+                        <input
+                            type="text"
+                            placeholder="Coffee Filter"
+                            value={supplies.title}
+                            onChange={this.handleSuppliesChange(idx)}
+                        />
+                        <button
+                            type="button"
+                            onClick={this.handleRemoveSupplies(idx)}
+                            className="small"
+                        >
+                            -
+            </button>
+                    </div>
+                ))}
+                <button
+                    type="button"
+                    onClick={this.handleAddSupplies}
+                    className="small"
+                >
+                    Add Supplies
+        </button>
+
+                <h4>Directions</h4>
+
+                {this.state.directions.map((directions, idx) => (
+                    <div className="directions">
+                        <input
+                            type="text"
+                            placeholder="Grind beans to the coarseness of sea salt"
+                            value={directions.title}
+                            onChange={this.handleDirectionsChange(idx)}
+                        />
+                        <button
+                            type="button"
+                            onClick={this.handleRemoveDirections(idx)}
+                            className="small"
+                        >
+                            -
+            </button>
+                    </div>
+                ))}
+                <button
+                    type="button"
+                    onClick={this.handleAddDirections}
+                    className="small"
+                >
+                    Add Directions
+        </button>
+                <button type="submit">Create Brew</button>
             </form>
-        )
+        );
     }
 }
 
-export default NewBrewForm;
+export default AddBrewForm;
