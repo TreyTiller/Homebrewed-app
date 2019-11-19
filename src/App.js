@@ -14,7 +14,7 @@ function App() {
       <Route path="/login" component={ LoginPage } />
       <Route path="/register" component={ RegistrationPage } />
       <Route path="/dashboard" component={ MainList } />
-      <Route path="/brew-guide" component={ BrewGuide } />
+      <Route path="/brew-guide/:recipe_id" component={ BrewGuide } />
       <Route path="/add-brew" component={ NewBrew }/>
       <Route exact path="/" component={ Tutorials } />
     </div>

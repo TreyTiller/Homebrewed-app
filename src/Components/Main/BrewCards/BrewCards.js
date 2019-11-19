@@ -12,7 +12,7 @@ class Cards extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:8000/api/recipes")
+        fetch("http://localhost:8000/api/recipes/")
             .then(res => res.json())
             .then(recipes => {
                 this.setState({
@@ -25,7 +25,7 @@ class Cards extends React.Component {
         return (
             <div className="dashboard">
                 {this.state.listData.map(card =>
-                    <Link to="/brew-guide" style={{ textDecoration: 'none' }}>
+                    <Link to={'/brew-guide/' + card.id} style={{ textDecoration: 'none' }}>
                         <div className="card">
                             <h3>{card.title}</h3>
                             <div className="meta">

@@ -40,26 +40,53 @@ class AddBrewForm extends React.Component {
         this.setState({ directions: newDirections });
     };
 
-    updateState = (newSkill) => {
+    updateState = (evt) => {
+        let newSkill = evt.target.value;
         this.setState({
-            skill: newSkill.value
+            skill: newSkill
         })
     }
 
     handleSubmit = evt => {
-        const { title, skill, time, directions, supplies } = this.state;
-        const data = new FormData(evt.target);
-        alert(` ${title}, ${skill}, ${time}, ${supplies}, ${directions} `);
-        // fetch('http://localhost:8000/api/recipes', {
-        //     method: 'POST',
-        //     body: data,
-        // })
-        // .then(res =>
-        //     (!res.ok)
-        //       ? res.json().then(e => Promise.reject(e))
-        //       : res.json()
-        //   )
+        evt.preventDefault()
+        const { title, skill, time } = this.state;
+        alert(` ${title}, ${skill}, ${time} `);
+
+        var url = 'http://localhost:8000/api/recipes';
+        var data = { title: this.state.title, time: this.state.time, skill: this.state.skill }
+        let recipe = {}
+
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .catch(error => console.error('Error:', error))
+            .then(response => {
+                recipe = response
+                return fetch(`http://localhost:8000/api/supplies/${recipe.id}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(this.state.supplies)
+                })
+            })
+            .then(response => {
+                return fetch(`http://localhost:8000/api/directions/${recipe.id}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(this.state.directions)
+                })
+            })
     }
+
 
 
     handleAddSupplies = () => {
@@ -86,31 +113,16 @@ class AddBrewForm extends React.Component {
         });
     };
 
-    componentDidMount() {
-        fetch('http://localhost:8000/api/recipes', {
-            method: "POST",
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: {
-                "title": this.state.title,
-            }
-        })
-            .then(res =>
-                (!res.ok)
-            )
-    }
-
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
                 <label>Add a title for your brew method:</label>
                 <input placeholder="French Press" name="title" value={this.state.title} onChange={this.handleTitleChange} required />
                 <label>What is the difficulty of this method:</label>
-                <select value={this.state.skill} onChange={this.updateState}>
-                    <option value="hard">Hard</option>
-                    <option value="medium">Medium</option>
-                    <option value="easy">Easy</option>
+                <select value={this.state.skill} onChange={(evt) => this.updateState(evt)} name={this.state.skill}>
+                    <option value="Hard">Hard</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Easy">Easy</option>
                 </select>
                 <label>How long will this take to make:</label>
                 <input type="text" placeholder="4:00" name="time" value={this.state.time} onChange={this.handleTimeChange} />
