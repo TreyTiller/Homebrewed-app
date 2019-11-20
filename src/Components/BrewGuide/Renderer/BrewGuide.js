@@ -55,6 +55,7 @@ class BrewGuide extends React.Component {
     render() {
         return (
             <div>
+                <HeaderBack />
                 <section>
                     <h4>{this.state.recipe.title}</h4>
                     {this.state.supplies.map(supplies =>
@@ -63,9 +64,8 @@ class BrewGuide extends React.Component {
                     {this.state.directions.map(directions => 
                         <h4>{directions.title}</h4>
                         )}
-                    
-
                 </section>
+                <Stopwatch />
             </div>
         )
     }
