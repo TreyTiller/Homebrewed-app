@@ -1,6 +1,7 @@
 import React from 'react';
 import './BrewCard.css';
 import { Link } from 'react-router-dom';
+import TokenService from '../../../services/token-service'
 
 
 class Cards extends React.Component {
@@ -12,7 +13,11 @@ class Cards extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:8000/api/recipes/")
+        fetch(`http://localhost:8000/api/recipes`, {
+            headers: {
+                authorization: `Bearer ${TokenService.getAuthToken()}`
+            }
+        })
             .then(res => res.json())
             .then(recipes => {
                 this.setState({

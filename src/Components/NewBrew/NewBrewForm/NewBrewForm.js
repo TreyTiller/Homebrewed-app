@@ -1,4 +1,5 @@
 import React from "react";
+import TokenService from "../../../services/token-service";
 
 
 
@@ -61,6 +62,7 @@ class AddBrewForm extends React.Component {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                authorization: `Bearer ${TokenService.getAuthToken()}`
             },
             body: JSON.stringify(data)
         })
@@ -72,6 +74,7 @@ class AddBrewForm extends React.Component {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
+                        authorization: `Bearer ${TokenService.getAuthToken()}`
                     },
                     body: JSON.stringify(this.state.supplies)
                 })
@@ -81,6 +84,7 @@ class AddBrewForm extends React.Component {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
+                        authorization: `Bearer ${TokenService.getAuthToken()}`
                     },
                     body: JSON.stringify(this.state.directions)
                 })
