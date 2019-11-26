@@ -35,6 +35,12 @@
   font-weight: bold;
   margin-bottom: 10px;
   width: 100px;
+  transition-duration: 0.4s;
+}
+
+.Button:hover {
+  background-color: red ;
+  cursor: pointer;
 }
 
 .Required {

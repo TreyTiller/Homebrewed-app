@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Button, Input, Required } from '../Utils/Utils'
 import AuthApiService from '../../services/auth-api-service'
 import { Link } from 'react-router-dom'
+import './Registration-form.css'
 
 export default class RegistrationForm extends Component {
   static defaultProps = {
@@ -35,52 +36,56 @@ export default class RegistrationForm extends Component {
     const { error } = this.state
     return (
       <div>
-      <form
-        className='RegistrationForm'
-        onSubmit={this.handleSubmit}
-      >
-        <div role='alert'>
-          {error && <p className='red'>{error}</p>}
-        </div>
-        <div className='nick_name'>
-          <label htmlFor='RegistrationForm__nick_name'>
-            Nickname
+        <form
+          className='RegistrationForm'
+          onSubmit={this.handleSubmit}
+        >
+          <div role='alert'>
+            {error && <p className='red'>{error}</p>}
+          </div>
+          <div className='nick_name'>
+            <label htmlFor='RegistrationForm__nick_name'>
+              Nickname
           </label>
-          <Input
-            name='nick_name'
-            type='text'
-            required
-            id='RegistrationForm__nick_name'>
-          </Input>
-        </div>
-        <div className='user_name'>
-          <label htmlFor='RegistrationForm__user_name'>
-            User name <Required />
-          </label>
-          <Input
-            name='user_name'
-            type='text'
-            required
-            id='RegistrationForm__user_name'>
-          </Input>
-        </div>
-        <div className='password'>
-          <label htmlFor='RegistrationForm__password'>
-            Password <Required />
-          </label>
-          <Input
-            name='password'
-            type='password'
-            required
-            id='RegistrationForm__password'>
-          </Input>
-        </div>
-        <Button type='submit'>
-          Register
+            <Input
+              name='nick_name'
+              type='text'
+              required
+              id='RegistrationForm__nick_name'
+              placeholder="Nickname">
+            </Input>
+          </div>
+          <div className='user_name'>
+            <label htmlFor='RegistrationForm__user_name'>
+              User name <Required />
+            </label>
+            <Input
+              name='user_name'
+              type='text'
+              required
+              id='RegistrationForm__user_name'
+              placeholder="User Name">
+            </Input>
+          </div>
+          <div className='password'>
+            <label htmlFor='RegistrationForm__password'>
+              Password <Required />
+            </label>
+            <Input
+              name='password'
+              type='password'
+              required
+              id='RegistrationForm__password'
+              placeholder="Password">
+            </Input>
+          </div>
+          <Button type='submit' className="register">
+            Register
         </Button>
-      </form>
-
-      <Link to="/login">Already have an account?<button>Log in</button></Link>
+        </form>
+        <div className="already-account">
+          <Link to="/login" className="login_link">Already have an account?<button className="login">Log in</button></Link>
+        </div>
       </div>
     )
   }
