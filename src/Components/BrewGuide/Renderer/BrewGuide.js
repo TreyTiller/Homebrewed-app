@@ -1,5 +1,5 @@
 import React from 'react';
-import Guide from '../Guide';
+//import Guide from '../Guide';
 import Stopwatch from '../Stopwatch';
 import HeaderBack from '../../Header/Header-Back';
 import TokenService from '../../../services/token-service'

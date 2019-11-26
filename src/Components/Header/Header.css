@@ -1,4 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
 header {
     display: flex;
-    justify-content: center;
+}
+
+.login_img {
+    width: 300px;
+    height: auto;
+    margin: auto;
 }

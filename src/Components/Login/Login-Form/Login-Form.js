@@ -3,6 +3,7 @@ import TokenService from '../../../services/token-service'
 import AuthApiService from '../../../services/auth-api-service'
 import { Button, Input } from '../../Utils/Utils'
 import { Link } from 'react-router-dom'
+import './Login-Form.css'
 
 export default class LoginForm extends Component {
   static defaultProps = {
@@ -41,26 +42,29 @@ export default class LoginForm extends Component {
           {error && <p className='red'>{error}</p>}
         </div>
         <div className='user_name'>
-          <label htmlFor='LoginForm__user_name'>
+          <label htmlFor='LoginForm__user_name' className="login_label">
             User name
           </label>
           <Input
             required
             name='user_name'
-            id='LoginForm__user_name'>
+            id='LoginForm__user_name' 
+            placeholder="User Name">
           </Input>
         </div>
         <div className='password'>
-          <label htmlFor='LoginForm__password'>
+          <label htmlFor='LoginForm__password' className="login_label">
             Password
           </label>
           <Input
             required
             name='password'
             type='password'
-            id='LoginForm__password'>
+            id='LoginForm__password'
+            placeholder="Password">
           </Input>
         </div>
+        <div className="buttons">
         <Button type='submit'>
           Login
         </Button>
@@ -74,6 +78,7 @@ export default class LoginForm extends Component {
             Tutorial
         </Button>
         </Link>
+        </div>
       </form>
     )
   }

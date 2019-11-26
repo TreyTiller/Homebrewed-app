@@ -26,7 +26,7 @@ class Cards extends React.Component {
         })
     }
     render() {
-        const {cards, card} = this.state;
+        const {card} = this.state;
         return(
             <div>
                 <button

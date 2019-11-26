@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import LoginForm from '../../Components/Login/Login-Form/Login-Form'
 import { Section } from '../../Components/Utils/Utils'
 import HeaderLocked from '../../Components/Header/Header-Locked'
+import './LoginPage.css'
 
 export default class LoginPage extends Component {
   static defaultProps = {

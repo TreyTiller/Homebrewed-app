@@ -7,7 +7,7 @@ class HeaderLocked extends React.Component {
     render() {
         return(
             <header>
-                    <img src={ Logo } alt="logo" />
+                    <img src={ Logo } alt="logo" className="login_img"/>
             </header>
         )
     }

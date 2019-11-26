@@ -6,6 +6,7 @@ import MainList from './Components/Main/Renderer/MainList';
 import BrewGuide from './Components/BrewGuide/Renderer/BrewGuide';
 import NewBrew from './Components/NewBrew/Renderer/NewBrew';
 import Tutorials from './Components/Tutorials/Renderer/Tutorials';
+import './App.css'
 
 
 function App() {
