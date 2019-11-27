@@ -1,0 +1,25 @@
+h1.welcome {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+hr.welcome {
+    width: 50%;
+    border: .5px solid rgba(225, 225, 225, 0.253);
+}
+
+h4.tagline {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+p.routes{
+    text-align: center;
+}
+
+hr.lower {
+    width: 75%;
+    border: .5px solid rgba(225, 225, 225, 0.336);
+}

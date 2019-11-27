@@ -1,14 +1,14 @@
 import React from 'react';
-import HeaderSkip from '../../Header/Header-Skip';
-import Cards from '../Cards';
+import HeaderLocked from '../../Header/Header-Locked';
+import Tuts from '../Tuts'
 
 
 class Tutorials extends React.Component {
     render() {
         return(
             <div className="renderer">
-                <HeaderSkip />
-                <Cards />
+                <HeaderLocked />
+                <Tuts />
             </div>
         )
     }
