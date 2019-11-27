@@ -57,7 +57,7 @@ class BrewGuide extends React.Component {
             <div>
                 <HeaderBack />
                 <section>
-                    <h4>{this.state.recipe.title}</h4>
+                    <h2>{this.state.recipe.title}</h2>
                     {this.state.supplies.map(supplies =>
                         <h4>{supplies.title}</h4>
                     )}
