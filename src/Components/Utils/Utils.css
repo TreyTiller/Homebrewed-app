@@ -39,7 +39,7 @@
 }
 
 .Button:hover {
-  background-color: red ;
+  background-color: rgba(255, 29, 29, 0.603) ;
   cursor: pointer;
 }
 
