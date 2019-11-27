@@ -50,8 +50,8 @@ class AddBrewForm extends React.Component {
 
     handleSubmit = evt => {
         evt.preventDefault()
-        const { title, skill, time } = this.state;
-        alert(` ${title}, ${skill}, ${time} `);
+        const { title } = this.state;
+        alert(`Your ${title} guide has been created!`);
 
         var url = 'http://localhost:8000/api/recipes';
         var data = { title: this.state.title, time: this.state.time, skill: this.state.skill }
@@ -88,6 +88,9 @@ class AddBrewForm extends React.Component {
                     },
                     body: JSON.stringify(this.state.directions)
                 })
+            })
+            .then(response => {
+                this.props.history.push("/dashboard")
             })
     }
 
