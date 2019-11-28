@@ -19,7 +19,51 @@ p.routes{
     text-align: center;
 }
 
+p.tut_content {
+    width: 75%;
+    margin: auto;
+    line-height: 25px;
+}
+
+p.dev_content{
+    text-align: center;
+    line-height: 25px;
+}
+
 hr.lower {
     width: 75%;
     border: .5px solid rgba(225, 225, 225, 0.336);
+}
+
+hr.sep {
+    width: 50%;
+    border: .5px solid rgba(225, 225, 225, 0.336);
+    margin-top: 50px;
+    margin-bottom: 5px;
+}
+
+div.links {
+    margin-right: 100px;
+    margin-left: 100px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tut_link {
+    color: rgba(212, 118, 111, 0.726);
+    transition-duration: 0.4s;
+}
+
+.tut_link:hover {
+    color: rgb(255, 255, 255);
+}
+
+ul.feat_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+li {
+    margin: 20px;
 }

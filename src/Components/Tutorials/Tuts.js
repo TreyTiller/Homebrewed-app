@@ -10,12 +10,12 @@ class Tut extends React.Component {
                     <h1 className="welcome">Welcome to Homebrewed!</h1>
                     <hr className="welcome"></hr>
                     <h4 className="tagline">Your one stop guide to amazing home brewed coffee</h4>
-                    <p className="routes">Please <Link to="/register">Sign Up</Link> or <Link to="/login">Log In</Link> to use, or check out the tutorial below for more details on the app!</p>
+                    <p className="routes">Please <Link to="/register" className="tut_link">Sign Up</Link> or <Link to="/login" className="tut_link">Log In</Link> to use, or check out the tutorial below for more details on the app!</p>
                 </section>
                 <hr className="lower"></hr>
                 <section className="lower">
-                    <h5>About:</h5>
-                    <p>The third wave of coffee has brought amazing brews to local coffee shops who consider coffee to be artisanal food
+                    <h4 className="tagline">About:</h4>
+                    <p className="tut_content">The third wave of coffee has brought amazing brews to local coffee shops who consider coffee to be artisanal food
                          rather than a commodity. As patrons, we love and enjoy these roasts and have the ability to order some of the
                          best coffee the world has to offer right from our phones and have it delivered to our door. Without the
                          knowledge of a barista, how are you supposed to get those delicious beans into something more than just a
@@ -28,20 +28,30 @@ class Tut extends React.Component {
                          HomeBrewed allows you to get that time you lost researching back, so you can sit down and experience something
                          more than just a cup of coffee.</p>
 
-                    <h5>Functionality:</h5>
-                    <p>The functionality is simple! Choose a brew guide to follow from the main dashboard screen. If you don't see what 
+                    <hr className="sep"></hr>
+
+                    <h4 className="tagline">Functionality:</h4>
+                    <p className="tut_content">The functionality is simple! Choose a brew guide to follow from the main dashboard screen. If you don't see what
                         you're looking for click the 'Add Brew' button in the top right corner to create a personal brewing guide! </p>
-                    <p>The brew guides consist of a list of supplies and directions telling you how to achieve the perfect cup.
+
+                    <p className="tut_content">The brew guides consist of a list of supplies and directions telling you how to achieve the perfect cup.
                         The guides also feature a built in timer for anyone who might not have one!</p>
-                    <p>And there ya go! That's all you need for success. Man, this is easy...</p>
 
-                    <h5>Development:</h5>
-                    <p>If you'd like to checkout any of the working code or how this was made follow any of the links bellow!</p>
-                    <a href="https://github.com/TreyTiller/HomeBrewed-api" target="_blank" rel="noopener noreferrer">Server Repo</a>
-                    <a href="https://github.com/TreyTiller/Homebrewed-app" target="_blank" rel="noopener noreferrer">Client Repo</a>
+                    <p className="tut_content">And there ya go! That's all you need for success. Man, this is easy...</p>
 
-                    <h5>Upcoming Features:</h5>
-                    <ul>
+                    <hr className="sep"></hr>
+
+                    <h4 className="tagline">Development:</h4>
+                    <p className="dev_content">If you'd like to checkout any of the working code or how this was made follow any of the links bellow!</p>
+                    <div className="links">
+                        <a href="https://github.com/TreyTiller/HomeBrewed-api" target="_blank" rel="noopener noreferrer" className="tut_link">Server Repo</a>
+                        <a href="https://github.com/TreyTiller/Homebrewed-app" target="_blank" rel="noopener noreferrer" className="tut_link">Client Repo</a>
+                    </div>
+
+                    <hr className="sep"></hr>
+
+                    <h4 className="tagline">Upcoming Features:</h4>
+                    <ul className="feat_list">
                         <li>Hot and Cold Beverage Brew Guides</li>
                         <li>Bean Information Storage</li>
                         <li>Bean Expiration/Freshness Tracking</li>
