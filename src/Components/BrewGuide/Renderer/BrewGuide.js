@@ -2,7 +2,8 @@ import React from 'react';
 //import Guide from '../Guide';
 import Stopwatch from '../Stopwatch';
 import HeaderBack from '../../Header/Header-Back';
-import TokenService from '../../../services/token-service'
+import TokenService from '../../../services/token-service';
+import { Link } from 'react-router-dom';
 
 class BrewGuide extends React.Component {
     constructor(props) {
@@ -14,6 +15,32 @@ class BrewGuide extends React.Component {
 
         }
     }
+
+    // deleteGuideRequest = recipe_id => {
+    //     const id = this.props.match.params.recipe_id
+    //     fetch(`http://localhost:8000/api/supplies/${id}`, {
+    //         method: "DELETE",
+    //         headers: {
+    //             authorization: `Bearer ${TokenService.getAuthToken()}`
+    //         }
+    //     })
+    //         .then(res => {
+    //             if (!res.ok) {
+    //                 return res.json().then(error => {
+    //                     throw error;
+    //                 });
+    //             }
+    //             // return res.json();
+    //         })
+    //     //   .then(() => {
+    //     //     this.setState({
+    //     //       notes: this.state.notes.filter(note => note.id !== note_id)
+    //     //     });
+    //     //   })
+    //     //   .catch(error => {
+    //     //     console.error(error);
+    //     //   });
+    // };
 
 
     componentDidMount() {
@@ -28,6 +55,7 @@ class BrewGuide extends React.Component {
                 this.setState({
                     recipe: recipes
                 })
+                console.log(this.state.recipe)
             })
             .then(
                 fetch(`http://localhost:8000/api/supplies/${id}`)
@@ -58,14 +86,22 @@ class BrewGuide extends React.Component {
                 <HeaderBack />
                 <section>
                     <h2>{this.state.recipe.title}</h2>
+                    <h3>{this.state.recipe.coffee}</h3>
+                    <h3>{this.state.recipe.water}</h3>
                     {this.state.supplies.map(supplies =>
                         <h4>{supplies.title}</h4>
                     )}
-                    {this.state.directions.map(directions => 
+                    {this.state.directions.map(directions =>
                         <h4>{directions.title}</h4>
-                        )}
+                    )}
                 </section>
                 <Stopwatch />
+                {/* <Link to="/dashboard">
+                    <button
+                        className="deleteGuideButton"
+                        onClick={this.deleteGuideRequest}
+                    >Delete Brew Guide</button>
+                </Link> */}
             </div>
         )
     }

@@ -10,6 +10,8 @@ class AddBrewForm extends React.Component {
             title: "",
             time: "",
             skill: "",
+            coffee: "",
+            water: "",
             supplies: [{ title: "" }],
             directions: [{ title: "" }]
         };
@@ -21,6 +23,14 @@ class AddBrewForm extends React.Component {
 
     handleTimeChange = evt => {
         this.setState({ time: evt.target.value });
+    };
+
+    handleCoffeeChange = evt => {
+        this.setState({ coffee: evt.target.value });
+    };
+
+    handleWaterChange = evt => {
+        this.setState({ water: evt.target.value });
     };
 
     handleSuppliesChange = idx => evt => {
@@ -133,6 +143,10 @@ class AddBrewForm extends React.Component {
                 </select>
                 <label>How long will this take to make:</label>
                 <input type="text" placeholder="4:00" name="time" value={this.state.time} onChange={this.handleTimeChange} />
+                <label>How many grams of coffee will this require:</label>
+                <input type="text" placeholder="24 Grams" name="coffee" value={this.state.coffee} onChange={this.handleCoffeeChange} />
+                <label>How many grams of water will this require:</label>
+                <input type="text" placeholder="350 Grams" name="water" value={this.state.water} onChange={this.handleWaterChange} />
 
                 <h4>Supplies</h4>
 
