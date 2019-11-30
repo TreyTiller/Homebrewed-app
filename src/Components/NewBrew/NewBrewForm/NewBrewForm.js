@@ -65,7 +65,7 @@ class AddBrewForm extends React.Component {
         alert(`Your ${title} guide has been created!`);
 
         var url = `${config.API_ENDPOINT}/api/recipes`;
-        var data = { title: this.state.title, time: this.state.time, skill: this.state.skill }
+        var data = { title: this.state.title, time: this.state.time, skill: this.state.skill, coffee: this.state.coffee, water: this.state.water }
         let recipe = {}
 
 

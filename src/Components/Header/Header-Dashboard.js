@@ -16,9 +16,8 @@ class HeaderDash extends React.Component {
         return (
             <header className="dash">
                 <Link
-                    onClick={this.handleLogoutClick}
                     to='/login'>
-                        <Button className="dash_nav">Logout</Button>
+                        <Button onClick={this.handleLogoutClick} className="dash_nav">Logout</Button>
                 </Link>
                 <Link to="/dashboard">
                     <img src={Logo} alt="logo" className="dash_img"/>
