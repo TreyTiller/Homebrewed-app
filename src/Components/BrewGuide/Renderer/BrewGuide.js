@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Icon from '../../../../src/icons8-coffee-beans-50.png'
 import Water from '../../../../src/icons8-camping-kettle-64.png'
 import './BrewGuide.css'
+import config from '../../../config'
 
 class BrewGuide extends React.Component {
     constructor(props) {
@@ -21,7 +22,7 @@ class BrewGuide extends React.Component {
 
     deleteGuideRequest = recipe_id => {
         const id = this.props.match.params.recipe_id
-        fetch(`http://localhost:8000/api/recipes/${id}`, {
+        fetch(`${config.API_ENDPOINT}/api/recipes/${id}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${TokenService.getAuthToken()}`
@@ -48,7 +49,7 @@ class BrewGuide extends React.Component {
 
     componentDidMount() {
         const id = this.props.match.params.recipe_id
-        fetch(`http://localhost:8000/api/recipes/${id}`, {
+        fetch(`${config.API_ENDPOINT}/api/recipes/${id}`, {
             headers: {
                 Authorization: `Bearer ${TokenService.getAuthToken()}`
             }
@@ -61,7 +62,7 @@ class BrewGuide extends React.Component {
                 console.log(this.state.recipe)
             })
             .then(
-                fetch(`http://localhost:8000/api/supplies/${id}`)
+                fetch(`${config.API_ENDPOINT}/api/supplies/${id}`)
                     .then(response => response.json())
                     .then(supplies => {
                         this.setState({
@@ -71,7 +72,7 @@ class BrewGuide extends React.Component {
                     })
             )
             .then(
-                fetch(`http://localhost:8000/api/directions/${id}`)
+                fetch(`${config.API_ENDPOINT}/api/directions/${id}`)
                     .then(response => response.json())
                     .then(directions => {
                         this.setState({

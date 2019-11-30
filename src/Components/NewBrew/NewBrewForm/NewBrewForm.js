@@ -1,5 +1,6 @@
 import React from "react";
 import TokenService from "../../../services/token-service";
+import config from '../../../config'
 
 
 
@@ -63,7 +64,7 @@ class AddBrewForm extends React.Component {
         const { title } = this.state;
         alert(`Your ${title} guide has been created!`);
 
-        var url = 'http://localhost:8000/api/recipes';
+        var url = `${config.API_ENDPOINT}/api/recipes`;
         var data = { title: this.state.title, time: this.state.time, skill: this.state.skill }
         let recipe = {}
 
@@ -80,7 +81,7 @@ class AddBrewForm extends React.Component {
             .catch(error => console.error('Error:', error))
             .then(response => {
                 recipe = response
-                return fetch(`http://localhost:8000/api/supplies/${recipe.id}`, {
+                return fetch(`${config.API_ENDPOINT}/api/supplies/${recipe.id}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -90,7 +91,7 @@ class AddBrewForm extends React.Component {
                 })
             })
             .then(response => {
-                return fetch(`http://localhost:8000/api/directions/${recipe.id}`, {
+                return fetch(`${config.API_ENDPOINT}/api/directions/${recipe.id}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
