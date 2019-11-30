@@ -3,6 +3,7 @@ import Logo from '../../HomeBrewed-logo.png';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import TokenService from '../../services/token-service'
+import { Button, Input } from '../../Components/Utils/Utils'
 
 
 class HeaderDash extends React.Component {
@@ -13,17 +14,17 @@ class HeaderDash extends React.Component {
 
     render() {
         return (
-            <header>
+            <header className="dash">
                 <Link
                     onClick={this.handleLogoutClick}
                     to='/login'>
-                        <button>Logout</button>
+                        <Button className="dash_nav">Logout</Button>
                 </Link>
                 <Link to="/dashboard">
-                    <img src={Logo} alt="logo" />
+                    <img src={Logo} alt="logo" className="dash_img"/>
                 </Link>
                 <Link to="/add-brew">
-                    <button>Add Brew</button>
+                    <Button className="dash_nav">Add Brew</Button>
                 </Link>
             </header>
         )

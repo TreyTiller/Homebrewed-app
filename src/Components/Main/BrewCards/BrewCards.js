@@ -34,7 +34,7 @@ class Cards extends React.Component {
                         <div className="card">
                             <h3>{card.title}</h3>
                             <div className="meta">
-                                <p>Skill Level: {card.skill}</p>
+                                <p>Skill: {card.skill}</p>
                                 <p>Brew Time: {card.time}</p>
                             </div>
                         </div>

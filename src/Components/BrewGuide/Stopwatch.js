@@ -1,4 +1,5 @@
 import React from 'react';
+import './Stopwatch.css';
 
 class Stopwatch extends React.Component {
     constructor(props) {
@@ -38,17 +39,19 @@ class Stopwatch extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>{this.getMinutes()}:{this.getSeconds()}</h1>
-                <button
-                    type="button"
-                    onClick={this.handleStartClick}>Start</button>
-                <button
-                    type="button"
-                    onClick={this.handleStopClick}>Stop</button>
-                <button
-                    type="button"
-                    onClick={this.handleResetClick}>Reset</button>
+            <div className="stopwatch">
+                <h1 className="time">{this.getMinutes()}:{this.getSeconds()}</h1>
+                <section className="button">
+                    <button
+                        type="button"
+                        onClick={this.handleStartClick}>Start</button>
+                    <button
+                        type="button"
+                        onClick={this.handleStopClick}>Stop</button>
+                    <button
+                        type="button"
+                        onClick={this.handleResetClick}>Reset</button>
+                </section>
             </div>
         )
     }
