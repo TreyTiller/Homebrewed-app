@@ -5,6 +5,7 @@
 header {
     display: flex;
     justify-content: center;
+    margin-top: 15px;
 }
 
 .login_img {
@@ -14,18 +15,43 @@ header {
 
 }
 
-/* .dash_nav{
+.dash{
+    justify-content: space-between;
+    display: flex;
     width: 100%;
-    font-size: 50%;
-} */
+}
 
-img.dash_img {
-    width: 50%;
+ .dash_img{
+    width: 100%;
     height: auto;
 }
 
-header.back{
+.logo{
+    width: 50%;
+    height: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
+    position: absolute;
 }
+
+.dash_nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav{
+  border: .5px solid rgba(225, 225, 225, 0.336);
+  background-color: #1f1f1f;
+  color: white;
+  font-size: .5em;
+  border-radius: 4px;
+  padding: 5px;
+  font-weight: bold;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 50px;
+  transition-duration: 0.4s;
+}
+
 
