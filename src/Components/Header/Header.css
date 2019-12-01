@@ -7,10 +7,6 @@ header {
     justify-content: center;
 }
 
-header.dash {
-    
-}
-
 .login_img {
     width: 50%;
     height: auto;
@@ -18,13 +14,18 @@ header.dash {
 
 }
 
-.dash_nav{
+/* .dash_nav{
     width: 100%;
     font-size: 50%;
-}
+} */
 
 img.dash_img {
     width: 50%;
     height: auto;
-    margin: auto;
 }
+
+header.back{
+    display: flex;
+    justify-content: center;
+}
+

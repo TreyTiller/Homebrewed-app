@@ -1,6 +1,9 @@
 import React from "react";
 import TokenService from "../../../services/token-service";
-import config from '../../../config'
+import config from '../../../config';
+import './NewBrewForm.css';
+import { Button, Input } from '../../Utils/Utils';
+import Trash from '../../../../src/icons8-remove-100.png'
 
 
 
@@ -133,76 +136,83 @@ class AddBrewForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label>Add a title for your brew method:</label>
-                <input placeholder="French Press" name="title" value={this.state.title} onChange={this.handleTitleChange} required />
-                <label>What is the difficulty of this method:</label>
-                <select value={this.state.skill} onChange={(evt) => this.updateState(evt)} name={this.state.skill}>
-                    <option value="Hard">Hard</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Easy">Easy</option>
-                </select>
-                <label>How long will this take to make:</label>
-                <input type="text" placeholder="4:00" name="time" value={this.state.time} onChange={this.handleTimeChange} />
-                <label>How many grams of coffee will this require:</label>
-                <input type="text" placeholder="24 Grams" name="coffee" value={this.state.coffee} onChange={this.handleCoffeeChange} />
-                <label>How many grams of water will this require:</label>
-                <input type="text" placeholder="350 Grams" name="water" value={this.state.water} onChange={this.handleWaterChange} />
+            <form onSubmit={this.handleSubmit} className="new_brew">
+                <section className="form_upper">
+                    <label>Add a title for your brew method:</label>
+                    <Input placeholder="French Press" name="title" value={this.state.title} onChange={this.handleTitleChange} required />
+                    <label>What is the difficulty of this method:</label>
+                    <select value={this.state.skill} onChange={(evt) => this.updateState(evt)} name={this.state.skill}>
+                        <option value="Hard">Hard</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Easy">Easy</option>
+                    </select>
+                    <label>How long will this take to make:</label>
+                    <Input type="text" placeholder="4:00" name="time" value={this.state.time} onChange={this.handleTimeChange} />
+                    <label>How many grams of coffee will this require:</label>
+                    <Input type="text" placeholder="24 Grams" name="coffee" value={this.state.coffee} onChange={this.handleCoffeeChange} />
+                    <label>How many grams of water will this require:</label>
+                    <Input type="text" placeholder="350 Grams" name="water" value={this.state.water} onChange={this.handleWaterChange} />
+                </section>
+                <section className="supplies_lower">
+                    <h4>Supplies</h4>
 
-                <h4>Supplies</h4>
+                    {this.state.supplies.map((supplies, idx) => (
+                        <div className="add_supplies">
+                            <Input
+                                type="text"
+                                placeholder="Coffee Filter"
+                                value={supplies.title}
+                                onChange={this.handleSuppliesChange(idx)}
+                            />
+                            <Button
+                                type="button"
+                                onClick={this.handleRemoveSupplies(idx)}
+                                className="delete"
+                            >
+                                <img src={Trash} alt="delete icon" className="trash"></img>
+                            </Button>
+                        </div>
+                    ))}
+                    <Button
+                        type="button"
+                        onClick={this.handleAddSupplies}
+                        className="small"
+                    >
+                        Add Supplies
+                    </Button>
+                </section>
+                <section className="directions_lower">
+                    <h4>Directions</h4>
 
-                {this.state.supplies.map((supplies, idx) => (
-                    <div className="supplies">
-                        <input
-                            type="text"
-                            placeholder="Coffee Filter"
-                            value={supplies.title}
-                            onChange={this.handleSuppliesChange(idx)}
-                        />
-                        <button
-                            type="button"
-                            onClick={this.handleRemoveSupplies(idx)}
-                            className="small"
-                        >
-                            -
-            </button>
-                    </div>
-                ))}
-                <button
-                    type="button"
-                    onClick={this.handleAddSupplies}
-                    className="small"
-                >
-                    Add Supplies
-        </button>
 
-                <h4>Directions</h4>
-
-                {this.state.directions.map((directions, idx) => (
-                    <div className="directions">
-                        <input
-                            type="text"
-                            placeholder="Grind beans to the coarseness of sea salt"
-                            value={directions.title}
-                            onChange={this.handleDirectionsChange(idx)}
-                        />
-                        <button
-                            type="button"
-                            onClick={this.handleRemoveDirections(idx)}
-                            className="small"
-                        >
-                            -
-            </button>
-                    </div>
-                ))}
-                <button
-                    type="button"
-                    onClick={this.handleAddDirections}
-                    className="small"
-                >
-                    Add Directions
-        </button>
-                <button type="submit">Create Brew</button>
+                    {this.state.directions.map((directions, idx) => (
+                        <div className="add_directions">
+                            <Input
+                                type="text"
+                                placeholder="Grind beans to the coarseness of sea salt"
+                                value={directions.title}
+                                onChange={this.handleDirectionsChange(idx)}
+                            />
+                            <Button
+                                type="button"
+                                onClick={this.handleRemoveDirections(idx)}
+                                className="delete"
+                            >
+                                <img src={Trash} alt="delete icon" className="trash"></img>
+                            </Button>
+                        </div>
+                    ))}
+                    <Button
+                        type="button"
+                        onClick={this.handleAddDirections}
+                        className="small"
+                    >
+                        Add Directions
+                    </Button>
+                </section>
+                <div className="create_button">
+                    <Button type="submit" className="create" >Create Brew</Button>
+                </div>
             </form>
         );
     }

@@ -1,0 +1,82 @@
+.form_upper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    margin: auto;
+    padding: 30px;
+    border: .5px solid rgba(225, 225, 225, 0.336);
+    border-radius: 8px;
+    background-color: #282828;
+}
+
+h4 {
+    text-align: center;
+}
+
+select {
+  border: .5px solid rgba(225, 225, 225, 0.336);
+  font-size: 1.1em;
+  margin: 10px;
+  padding: 10px;
+  text-align: left;
+  width: 200px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.supplies_lower{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    margin: auto;
+    padding: 10px;
+    border: .5px solid rgba(225, 225, 225, 0.336);
+    border-radius: 8px;
+    background-color: #282828;
+    
+}
+
+.directions_lower{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    margin: auto;
+    padding: 10px;
+    border: .5px solid rgba(225, 225, 225, 0.336);
+    border-radius: 8px;
+    background-color: #282828;
+}
+
+.trash{
+    width: 25px;
+    height: 25px;
+    align-content: center;
+}
+
+.add_supplies{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.delete {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0px;
+    margin-top: 5px;
+    padding: 0px;
+}
+
+.create{
+    width: 200px;
+    height: auto;
+    margin-top: 10px;
+}
+
+.create_button{
+    display: flex;
+    justify-content: center;
+}
