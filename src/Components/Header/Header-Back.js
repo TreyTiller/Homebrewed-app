@@ -10,11 +10,13 @@ class HeaderBack extends React.Component {
     render() {
         return (
             <header className="back">
-                <Link
-                    to='/dashboard'>
-                        <Button>Back</Button>
-                </Link>
-                <Link to="/dashboard">
+                <nav class="dash">
+                    <Link
+                        to='/dashboard'>
+                        <Button className="nav">Back</Button>
+                    </Link>
+                </nav>
+                <Link to="/dashboard" className="logo">
                     <img src={Logo} alt="logo" className="dash_img" />
                 </Link>
             </header>

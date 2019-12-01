@@ -34,16 +34,8 @@ class BrewGuide extends React.Component {
                         throw error;
                     });
                 }
-                // return res.json();
+                return alert('This brew guide has been deleted');
             })
-        //   .then(() => {
-        //     this.setState({
-        //       notes: this.state.notes.filter(note => note.id !== note_id)
-        //     });
-        //   })
-        //   .catch(error => {
-        //     console.error(error);
-        //   });
     };
 
 
@@ -87,17 +79,17 @@ class BrewGuide extends React.Component {
     render() {
         return (
             <div>
-                
+
                 <section>
                     <HeaderBack />
                     <h2 className="title">{this.state.recipe.title}</h2>
                     <div className="grams">
                         <div className="coffee">
-                            <img src={ Icon } alt="icon" className="bean"></img>
+                            <img src={Icon} alt="icon" className="bean"></img>
                             <h3>{this.state.recipe.coffee}</h3>
                         </div>
                         <div className="water">
-                            <img src={ Water } alt="icon" className="bean"></img>
+                            <img src={Water} alt="icon" className="bean"></img>
                             <h3>{this.state.recipe.water}</h3>
                         </div>
                     </div>
