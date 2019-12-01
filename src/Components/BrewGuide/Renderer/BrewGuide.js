@@ -8,6 +8,7 @@ import Icon from '../../../../src/icons8-coffee-beans-50.png'
 import Water from '../../../../src/icons8-camping-kettle-64.png'
 import './BrewGuide.css'
 import config from '../../../config'
+import Trash from '../../../../src/icons8-remove-100.png'
 
 class BrewGuide extends React.Component {
     constructor(props) {
@@ -86,11 +87,11 @@ class BrewGuide extends React.Component {
                     <div className="grams">
                         <div className="coffee">
                             <img src={Icon} alt="icon" className="bean"></img>
-                            <h3>{this.state.recipe.coffee}</h3>
+                            <h3 className="measurement">{this.state.recipe.coffee}</h3>
                         </div>
                         <div className="water">
-                            <img src={Water} alt="icon" className="bean"></img>
-                            <h3>{this.state.recipe.water}</h3>
+                            <img src={Water} alt="icon" className="pot"></img>
+                            <h3 className="measurement">{this.state.recipe.water}</h3>
                         </div>
                     </div>
 
@@ -109,12 +110,14 @@ class BrewGuide extends React.Component {
                     </div>
                 </section>
                 <Stopwatch />
-                <Link to="/dashboard">
-                    <button
-                        className="deleteGuideButton"
-                        onClick={this.deleteGuideRequest}
-                    >Delete Brew Guide</button>
-                </Link>
+                <div className="delete_but">
+                    <Link to="/dashboard">
+                        <button
+                            className="deleteGuideButton"
+                            onClick={this.deleteGuideRequest}
+                        ><img src={Trash} alt="delete icon" className="trash"></img></button>
+                    </Link>
+                </div>
             </div>
         )
     }
