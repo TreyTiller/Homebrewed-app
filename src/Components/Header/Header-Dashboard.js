@@ -3,7 +3,7 @@ import Logo from '../../HomeBrewed-logo.png';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import TokenService from '../../services/token-service'
-import { Button, Input } from '../../Components/Utils/Utils'
+import { Button } from '../../Components/Utils/Utils'
 
 
 class HeaderDash extends React.Component {

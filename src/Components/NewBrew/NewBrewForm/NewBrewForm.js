@@ -176,7 +176,7 @@ class AddBrewForm extends React.Component {
                     <Button
                         type="button"
                         onClick={this.handleAddSupplies}
-                        className="small"
+                        className="add"
                     >
                         Add Supplies
                     </Button>
@@ -205,7 +205,7 @@ class AddBrewForm extends React.Component {
                     <Button
                         type="button"
                         onClick={this.handleAddDirections}
-                        className="small"
+                        className="add"
                     >
                         Add Directions
                     </Button>

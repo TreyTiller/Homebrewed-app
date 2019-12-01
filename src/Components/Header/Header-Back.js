@@ -10,7 +10,7 @@ class HeaderBack extends React.Component {
     render() {
         return (
             <header className="back">
-                <nav class="dash">
+                <nav className="dash">
                     <Link
                         to='/dashboard'>
                         <Button className="nav">Back</Button>
