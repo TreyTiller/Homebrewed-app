@@ -3,6 +3,8 @@ import './BrewCard.css';
 import { Link } from 'react-router-dom';
 import TokenService from '../../../services/token-service';
 import config from '../../../config';
+import Skill from '../../../../src/skills_icon_02.png';
+import Time from '../../../../src/stopwatch_icon.png'
 
 
 class Cards extends React.Component {
@@ -35,8 +37,14 @@ class Cards extends React.Component {
                         <div className="card">
                             <h3>{card.title}</h3>
                             <div className="meta">
-                                <p>Skill: {card.skill}</p>
-                                <p>Brew Time: {card.time}</p>
+                                <div className="skill_level">
+                                    <img src={Skill} alt="skill level" className="skill_level_img"></img>
+                                    <p>{card.skill}</p>
+                                </div>
+                                <div className="prep_time">
+                                    <img src={Time} alt="skill level" className="skill_level_img"></img>
+                                    <p>{card.time}</p>
+                                </div>
                             </div>
                         </div>
                     </Link>

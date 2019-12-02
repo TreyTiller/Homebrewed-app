@@ -10,13 +10,20 @@ hr.welcome {
 }
 
 h4.tagline {
+    font-size: larger;
     text-align: center;
     margin-top: 15px;
     margin-bottom: 30px;
+    margin-right: 20px;
+    margin-left: 20px
 }
 
 p.routes{
     text-align: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    margin-left: 20px
 }
 
 p.tut_content {
@@ -28,6 +35,8 @@ p.tut_content {
 p.dev_content{
     text-align: center;
     line-height: 25px;
+    margin: auto;
+    width:75%;
 }
 
 hr.lower {
@@ -43,15 +52,15 @@ hr.sep {
 }
 
 div.links {
-    margin-right: 100px;
-    margin-left: 100px;
+    padding-top: 20px;
+    margin: auto;
     display: flex;
     justify-content: space-evenly;
 }
 
 .tut_link {
     color: rgba(212, 118, 111, 0.726);
-    font-size: large;
+    font-size: larger;
     text-decoration: none;
     transition-duration: 0.4s;
 }
