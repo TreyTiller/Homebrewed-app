@@ -68,14 +68,13 @@ class BrewGuide extends React.Component {
                 fetch(`${config.API_ENDPOINT}/api/directions/${id}`)
                     .then(response => response.json())
                     .then(directions => {
-                        directions.sort((a, b) => a.id - b.id);
+                        //directions.sort((a, b) => a.id - b.id);
                         this.setState({
                             directions: directions
                         })
                         console.log(this.state.directions)
                     })
             )
-
     }
 
     render() {
