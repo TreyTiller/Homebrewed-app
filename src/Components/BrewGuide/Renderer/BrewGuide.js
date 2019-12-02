@@ -21,6 +21,7 @@ class BrewGuide extends React.Component {
         }
     }
 
+
     deleteGuideRequest = recipe_id => {
         const id = this.props.match.params.recipe_id
         fetch(`${config.API_ENDPOINT}/api/recipes/${id}`, {
@@ -68,6 +69,7 @@ class BrewGuide extends React.Component {
                 fetch(`${config.API_ENDPOINT}/api/directions/${id}`)
                     .then(response => response.json())
                     .then(directions => {
+                        directions.sort((a, b) => a.id - b.id);
                         this.setState({
                             directions: directions
                         })
