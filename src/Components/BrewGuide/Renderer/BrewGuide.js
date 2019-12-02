@@ -17,7 +17,6 @@ class BrewGuide extends React.Component {
             recipe: {},
             supplies: [],
             directions: []
-
         }
     }
 
