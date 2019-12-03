@@ -64,6 +64,12 @@ select {
     align-content: center;
 }
 
+.add_directions{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
 .delete {
     width: 50px;
     height: 50px;
@@ -87,4 +93,46 @@ select {
     width: 200px;
     height: auto;
     margin-top: 10px;
+}
+
+@media only screen and (min-width: 700px) {
+
+
+    .form_upper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 500px;
+        margin: auto;
+        padding: 30px;
+        border: .5px solid rgba(225, 225, 225, 0.336);
+        border-radius: 8px;
+        background-color: #282828;
+    }
+
+    .supplies_lower{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 500px;
+        margin: auto;
+        padding: 10px;
+        border: .5px solid rgba(225, 225, 225, 0.336);
+        border-radius: 8px;
+        background-color: #282828;
+        
+    }
+    
+    .directions_lower{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 500px;
+        margin: auto;
+        padding: 10px;
+        border: .5px solid rgba(225, 225, 225, 0.336);
+        border-radius: 8px;
+        background-color: #282828;
+    }
+
 }

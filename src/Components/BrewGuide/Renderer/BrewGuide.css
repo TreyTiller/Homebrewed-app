@@ -20,8 +20,6 @@ div.water {
     justify-content: center;
 }
 
-
-
 .supplies {
     display: flex;
     flex-direction: column;
@@ -74,5 +72,36 @@ img.pot {
     width: 200px;
     height: auto;
     margin-top: 10px;
+}
+
+@media only screen and (min-width: 700px) {
+
+
+    .directions {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 600px;
+        padding: 15px;
+        margin: auto;
+        border: .5px solid rgba(225, 225, 225, 0.336);
+        border-radius: 8px;
+        background-color: #282828;
+        margin-bottom: 20px;
+    }
+
+    .supplies {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 600px;
+        margin: auto;
+        padding: 15px;
+        border: .5px solid rgba(225, 225, 225, 0.336);
+        border-radius: 8px;
+        background-color: #282828;
+        margin-bottom: 20px;
+    }
+
 }
 
