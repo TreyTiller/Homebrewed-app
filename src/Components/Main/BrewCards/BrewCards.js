@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import TokenService from '../../../services/token-service';
 import config from '../../../config';
 import Skill from '../../../../src/skills_icon_02.png';
-import Time from '../../../../src/stopwatch_icon.png'
+import Time from '../../../../src/stopwatch_icon.png';
 
 
 class Cards extends React.Component {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Tuts.css'
+import './Tuts.css';
 
 class Tut extends React.Component {
     render() {

@@ -8,8 +8,8 @@ import RegistrationForm from '../Registration-form';
 function Register() {
   return (
     <div className="register-renderer">
-        <HeaderLocked />
-        <RegistrationForm />
+      <HeaderLocked />
+      <RegistrationForm />
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import React from 'react';
 import HeaderLocked from '../../Header/Header-Locked';
-import Tuts from '../Tuts'
+import Tuts from '../Tuts';
 
 
 class Tutorials extends React.Component {
     render() {
-        return(
+        return (
             <div className="renderer">
                 <HeaderLocked />
                 <Tuts />

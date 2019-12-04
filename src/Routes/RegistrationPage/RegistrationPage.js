@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import { Section } from '../../Components/Utils/Utils'
-import RegistrationForm from '../../Components/Registration/Registration-form'
-import HeaderLocked from '../../Components/Header/Header-Locked'
+import React, { Component } from 'react';
+import { Section } from '../../Components/Utils/Utils';
+import RegistrationForm from '../../Components/Registration/Registration-form';
+import HeaderLocked from '../../Components/Header/Header-Locked';
 
 export default class RegistrationPage extends Component {
   static defaultProps = {
     history: {
-      push: () => {},
+      push: () => { },
     },
   }
 

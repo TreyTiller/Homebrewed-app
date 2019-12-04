@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import TokenService from '../../../services/token-service'
-import AuthApiService from '../../../services/auth-api-service'
-import { Button, Input } from '../../Utils/Utils'
-import { Link } from 'react-router-dom'
-import './Login-Form.css'
+import React, { Component } from 'react';
+import TokenService from '../../../services/token-service';
+import AuthApiService from '../../../services/auth-api-service';
+import { Button, Input } from '../../Utils/Utils';
+import { Link } from 'react-router-dom';
+import './Login-Form.css';
 
 export default class LoginForm extends Component {
   static defaultProps = {
@@ -48,7 +48,7 @@ export default class LoginForm extends Component {
           <Input
             required
             name='user_name'
-            id='LoginForm__user_name' 
+            id='LoginForm__user_name'
             placeholder="User Name">
           </Input>
         </div>
@@ -65,19 +65,19 @@ export default class LoginForm extends Component {
           </Input>
         </div>
         <div className="buttons">
-        <Button type='submit'>
-          Login
+          <Button type='submit'>
+            Login
         </Button>
-        <Link to="/register">
-          <Button>
-            Register
+          <Link to="/register">
+            <Button>
+              Register
         </Button>
-        </Link>
-        <Link to="/">
-          <Button>
-            Tutorial
+          </Link>
+          <Link to="/">
+            <Button>
+              Tutorial
         </Button>
-        </Link>
+          </Link>
         </div>
       </form>
     )
