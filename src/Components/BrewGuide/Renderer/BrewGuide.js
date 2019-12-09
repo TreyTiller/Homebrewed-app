@@ -51,7 +51,6 @@ class BrewGuide extends React.Component {
                 this.setState({
                     recipe: recipes
                 })
-                console.log(this.state.recipe)
             })
             .then(
                 fetch(`${config.API_ENDPOINT}/api/supplies/${id}`)
@@ -60,7 +59,6 @@ class BrewGuide extends React.Component {
                         this.setState({
                             supplies: supplies
                         })
-                        console.log(this.state.supplies)
                     })
             )
             .then(
@@ -71,7 +69,6 @@ class BrewGuide extends React.Component {
                         this.setState({
                             directions: directions
                         })
-                        console.log(this.state.directions)
                     })
             )
     }
