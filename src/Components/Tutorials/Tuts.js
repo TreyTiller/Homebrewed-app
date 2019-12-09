@@ -10,7 +10,8 @@ class Tut extends React.Component {
                     <h1 className="welcome">Welcome to Homebrewed!</h1>
                     <hr className="welcome"></hr>
                     <h4 className="tagline">Your one stop guide to amazing home brewed coffee</h4>
-                    <p className="routes">Please <Link to="/register" className="tut_link">Sign Up</Link> or <Link to="/login" className="tut_link">Log In</Link> to use, or check out the tutorial below for more details on the app!</p>
+                    <p className="routes">Please <Link to="/register" className="tut_link">Sign Up</Link> or <Link to="/login" className="tut_link">Log In</Link> to use, or use the credentials below to do a quick explore of the app!</p>
+                    <p className="routes">Username: DEMO | Password: Demo001!</p>
                 </section>
                 <hr className="lower"></hr>
                 <section className="lower">
