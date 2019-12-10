@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, BrowserRouter } from 'react-router-dom';
 import './Tuts.css';
 
 class Tut extends React.Component {
     render() {
         return (
+            <BrowserRouter>
             <div>
                 <section className="upper">
                     <h1 className="welcome">Welcome to Homebrewed!</h1>
@@ -61,6 +62,7 @@ class Tut extends React.Component {
                     </ul>
                 </section>
             </div>
+            </BrowserRouter>
         )
     }
 }

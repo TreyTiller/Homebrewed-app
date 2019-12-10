@@ -2,7 +2,7 @@ import React from 'react';
 import Stopwatch from '../Stopwatch';
 import HeaderBack from '../../Header/Header-Back';
 import TokenService from '../../../services/token-service';
-import { Link } from 'react-router-dom';
+import { Link, BrowserRouter } from 'react-router-dom';
 import Icon from '../../../../src/icons8-coffee-beans-50.png';
 import Water from '../../../../src/icons8-camping-kettle-64.png';
 import './BrewGuide.css';
@@ -75,8 +75,8 @@ class BrewGuide extends React.Component {
 
     render() {
         return (
+            <BrowserRouter>
             <div>
-
                 <section>
                     <HeaderBack />
                     <h2 className="title">{this.state.recipe.title}</h2>
@@ -115,6 +115,7 @@ class BrewGuide extends React.Component {
                     </Link>
                 </div>
             </div>
+            </BrowserRouter>
         )
     }
 }
