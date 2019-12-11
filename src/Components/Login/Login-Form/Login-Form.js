@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TokenService from '../../../services/token-service';
 import AuthApiService from '../../../services/auth-api-service';
 import { Button, Input } from '../../Utils/Utils';
-import { Link, BrowserRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Login-Form.css';
 
 export default class LoginForm extends Component {
@@ -64,7 +64,6 @@ export default class LoginForm extends Component {
             placeholder="Password">
           </Input>
         </div>
-        <BrowserRouter>
         <div className="buttons">
           <Button type='submit'>
             Login
@@ -81,7 +80,6 @@ export default class LoginForm extends Component {
         </Button>
           </Link>
         </div>
-        </BrowserRouter>
       </form>
     )
   }

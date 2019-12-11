@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import LoginPage from './Routes/LoginPage/LoginPage';
 import RegistrationPage from './Routes/RegistrationPage/RegistrationPage';
 import MainList from './Components/Main/Renderer/MainList';
@@ -11,7 +11,6 @@ import './App.css'
 
 function App() {
   return (
-    <BrowserRouter>
     <div className="App">
       <Route path="/login" component={ LoginPage } />
       <Route path="/register" component={ RegistrationPage } />
@@ -20,7 +19,7 @@ function App() {
       <Route path="/add-brew" component={ NewBrew }/>
       <Route exact path="/" component={ Tutorials } />
     </div>
-    </BrowserRouter>
+    
   );
 }
 

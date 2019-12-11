@@ -1,13 +1,12 @@
 import React from "react";
 import Logo from "../../HomeBrewed-logo.png";
 import "./Header.css";
-import { Link, BrowserRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "../Utils/Utils";
 
 class HeaderBack extends React.Component {
   render() {
     return (
-      <BrowserRouter>
         <header className="back">
           <nav className="dash">
             <Link to="/dashboard">
@@ -19,7 +18,6 @@ class HeaderBack extends React.Component {
             <img src={Logo} alt="logo" className="dash_img" />
           </Link>
         </header>
-      </BrowserRouter>
     );
   }
 }
