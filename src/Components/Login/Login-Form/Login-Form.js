@@ -4,17 +4,48 @@ import AuthApiService from '../../../services/auth-api-service';
 import { Button, Input } from '../../Utils/Utils';
 import { Link } from 'react-router-dom';
 import './Login-Form.css';
+import FadeIn from "react-fade-in";
+import Lottie from "react-lottie";
+import ReactLoading from "react-loading";
+import * as doneData from "../../../../src/doneloading.json";
+import * as cupData from "../../../../src/cupLoader.json";
+
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: cupData.default,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice"
+  }
+};
+
+const defaultOptions2 = {
+  loop: false,
+  autoplay: true,
+  animationData: doneData.default,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice"
+  }
+};
 
 export default class LoginForm extends Component {
+  
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      loading: undefined,
+      done: undefined
+    };
+  }
+  
   static defaultProps = {
     onLoginSuccess: () => { }
   }
 
-  state = { error: null }
-
   handleSubmitJwtAuth = ev => {
     ev.preventDefault()
-    this.setState({ error: null })
+    this.setState({ error: null, loading: true })
     const { user_name, password } = ev.target
 
     AuthApiService.postLogin({
@@ -24,15 +55,30 @@ export default class LoginForm extends Component {
       .then(res => {
         user_name.value = ''
         password.value = ''
+        this.setState({ done: true, loading: false });
         TokenService.saveAuthToken(res.authToken)
         this.props.onLoginSuccess()
       })
       .catch(res => {
-        this.setState({ error: res.error })
+        this.setState({ error: res.error, loading: false, done: false })
       })
   }
   render() {
     const { error } = this.state
+    if(this.state.loading || this.state.done){
+      return (
+        <FadeIn>
+            <div class="d-flex justify-content-center align-items-center">
+              <h1>Fetching Coffee</h1>
+              {!this.state.loading ? (
+                <Lottie options={defaultOptions} height={120} width={120} />
+              ) : (
+                <Lottie options={defaultOptions2} height={120} width={120} />
+              )}
+            </div>
+          </FadeIn>
+      )
+    }
     return (
       <form
         className='LoginForm'

@@ -117,5 +117,11 @@ class BrewGuide extends React.Component {
         )
     }
 }
-
+BrewGuide.defaultProps = {
+    match: {
+        params: {
+            
+        }
+    }
+}
 export default BrewGuide;
