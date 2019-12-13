@@ -47,10 +47,12 @@ export default class LoginForm extends Component {
     this.setState({ error: null, loading: true });
     const { user_name, password } = ev.target;
 
-    AuthApiService.postLogin({
+  //  setTimeout(() => { 
+     AuthApiService.postLogin({
       user_name: user_name.value,
       password: password.value
     })
+    
       .then(res => {
         user_name.value = "";
         password.value = "";
@@ -61,6 +63,7 @@ export default class LoginForm extends Component {
       .catch(res => {
         this.setState({ error: res.error, loading: false, done: false });
       });
+    // }, 5000);
   };
   render() {
     const { error } = this.state;
@@ -70,7 +73,7 @@ export default class LoginForm extends Component {
           <FadeIn>
             <div class="d-flex justify-content-center align-items-center">
               <h1>Fetching Coffee</h1>
-              {!this.state.loading ? (
+              {!this.state.done ? (
                 <Lottie options={defaultOptions} height={120} width={120} />
               ) : (
                 <Lottie options={defaultOptions2} height={120} width={120} />
