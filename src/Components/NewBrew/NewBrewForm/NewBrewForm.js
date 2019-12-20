@@ -64,6 +64,9 @@ class AddBrewForm extends React.Component {
 
     handleSubmit = evt => {
         evt.preventDefault()
+        if (this.state.skill === '') {
+            return alert('The skill is a required field')
+        } else {
         const { title } = this.state;
         alert(`Your ${title} guide has been created!`);
 
@@ -106,6 +109,7 @@ class AddBrewForm extends React.Component {
             .then(response => {
                 this.props.history.push("/dashboard")
             })
+        }
     }
 
 
@@ -141,17 +145,17 @@ class AddBrewForm extends React.Component {
                     <label>Add a title for your brew method:</label>
                     <Input placeholder="French Press" name="title" value={this.state.title} onChange={this.handleTitleChange} required />
                     <label>What is the difficulty of this method:</label>
-                    <select value={this.state.skill} onChange={(evt) => this.updateState(evt)} name={this.state.skill}>
+                    <select required value={this.state.skill || ''} onChange={(evt) => this.updateState(evt)} name={this.state.skill}>
                         <option value="Hard">Hard</option>
                         <option value="Medium">Medium</option>
                         <option value="Easy">Easy</option>
                     </select>
                     <label>How long will this take to make:</label>
-                    <Input type="text" placeholder="4:00" name="time" value={this.state.time} onChange={this.handleTimeChange} />
+                    <Input type="text" placeholder="4:00" name="time" value={this.state.time} onChange={this.handleTimeChange} required />
                     <label>How many grams of coffee will this require:</label>
-                    <Input type="text" placeholder="24 Grams" name="coffee" value={this.state.coffee} onChange={this.handleCoffeeChange} />
+                    <Input type="text" placeholder="24 Grams" name="coffee" value={this.state.coffee} onChange={this.handleCoffeeChange} required />
                     <label>How many grams of water will this require:</label>
-                    <Input type="text" placeholder="350 Grams" name="water" value={this.state.water} onChange={this.handleWaterChange} />
+                    <Input type="text" placeholder="350 Grams" name="water" value={this.state.water} onChange={this.handleWaterChange} required />
                 </section>
                 <section className="supplies_lower">
                     <h4>Supplies</h4>

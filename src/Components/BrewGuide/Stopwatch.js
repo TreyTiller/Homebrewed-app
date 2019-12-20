@@ -19,6 +19,7 @@ class Stopwatch extends React.Component {
 
     handleStartClick = () => {
         var _this = this;
+        this.refs.btn.setAttribute("disabled", "disabled");
         this.incrementer = setInterval(function () {
             _this.setState({
                 secondsElapsed:
@@ -28,6 +29,7 @@ class Stopwatch extends React.Component {
     }
 
     handleStopClick = () => {
+        this.refs.btn.removeAttribute("disabled");
         clearInterval(this.incrementer);
     }
 
@@ -43,6 +45,7 @@ class Stopwatch extends React.Component {
                 <h1 className="time">{this.getMinutes()}:{this.getSeconds()}</h1>
                 <section className="button">
                     <button
+                        ref="btn"
                         type="button"
                         onClick={this.handleStartClick}>Start</button>
                     <button
