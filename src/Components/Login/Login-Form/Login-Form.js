@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import "./Login-Form.css";
 import FadeIn from "react-fade-in";
 import Lottie from "react-lottie";
-import ReactLoading from "react-loading";
 import * as doneData from "../../../../src/doneloading.json";
 import * as cupData from "../../../../src/cupLoader.json";
 

@@ -3,11 +3,11 @@ import Stopwatch from '../Stopwatch';
 import HeaderBack from '../../Header/Header-Back';
 import TokenService from '../../../services/token-service';
 import { Link } from 'react-router-dom';
-import Icon from '../../../../src/icons8-coffee-beans-50.png';
-import Water from '../../../../src/icons8-camping-kettle-64.png';
+import Icon from '../../../../src/Images/icons8-coffee-beans-50.png';
+import Water from '../../../../src/Images/icons8-camping-kettle-64.png';
 import './BrewGuide.css';
 import config from '../../../config';
-import Trash from '../../../../src/icons8-remove-100.png';
+import Trash from '../../../../src/Images/icons8-remove-100.png';
 
 class BrewGuide extends React.Component {
     constructor(props) {

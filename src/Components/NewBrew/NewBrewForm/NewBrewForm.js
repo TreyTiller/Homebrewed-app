@@ -3,7 +3,7 @@ import TokenService from "../../../services/token-service";
 import config from '../../../config';
 import './NewBrewForm.css';
 import { Button, Input } from '../../Utils/Utils';
-import Trash from '../../../../src/icons8-remove-100.png';
+import Trash from '../../../../src/Images/icons8-remove-100.png';
 
 
 
